@@ -1,0 +1,1650 @@
+<!DOCTYPE html>
+<html lang="en-AU" class="dark js"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- EDIT: meta.title / meta.description -->
+  <title>Vanni Dinh | Data &amp; Business Analyst Portfolio</title>
+  <meta name="description" content="I'm Vanni Dinh, a Master of IT student at the University of Wollongong building Power BI, SQL and Tableau analyses. Explore my experience, projects and milestones.">
+
+  <!-- EDIT: meta.themeColor (browser UI colour, light and dark) -->
+  <meta name="theme-color" content="#FAF8F5" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0D0B17" media="(prefers-color-scheme: dark)">
+
+  <!-- EDIT: meta.openGraph (link previews; add og:image once you have assets/og.png) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Vanni Dinh | Data &amp; Business Analyst Portfolio">
+  <meta property="og:description" content="Master of IT student in Wollongong, NSW, building business data analyses and Power BI dashboards. Experience, projects and milestones.">
+  <!-- TODO(link): add the live site URL once published, e.g. <meta property="og:url" content="https://your-domain/"> -->
+  <meta name="twitter:card" content="summary">
+
+  <!-- Favicon: inline SVG monogram (no external image) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%236D4AFF'/%3E%3Ctext x='50%25' y='54%25' text-anchor='middle' dominant-baseline='middle' font-family='Georgia,serif' font-size='26' fill='white'%3EVD%3C/text%3E%3C/svg%3E">
+
+  <!-- Theme + motion flags before first paint (prevents a flash of the wrong theme) -->
+  <script>
+    (() => {
+      const d = document.documentElement;
+      try {
+        const t = localStorage.getItem('theme');
+        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) d.classList.add('dark');
+      } catch (e) {}
+      if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduce-motion');
+      d.classList.add('js');
+    })();
+  </script>
+
+  <!-- Tailwind CSS v3 Play CDN + config (tokens map to CSS variables below) -->
+  <script src="portfolio_files/3.4.17"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            bg: 'rgb(var(--bg) / <alpha-value>)',
+            surface: 'rgb(var(--surface) / <alpha-value>)',
+            ink: 'rgb(var(--ink) / <alpha-value>)',
+            muted: 'rgb(var(--muted) / <alpha-value>)',
+            line: 'rgb(var(--line) / <alpha-value>)',
+            primary: 'rgb(var(--primary) / <alpha-value>)',
+            'on-primary': 'rgb(var(--on-primary) / <alpha-value>)',
+            accent: 'rgb(var(--accent) / <alpha-value>)',
+            teal: 'rgb(var(--teal) / <alpha-value>)'
+          },
+          fontFamily: {
+            display: ['Fraunces', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
+          },
+          boxShadow: {
+            card: 'var(--shadow-card)',
+            'card-hover': 'var(--shadow-card-hover)'
+          },
+          transitionTimingFunction: {
+            'out-expo': 'cubic-bezier(0.16,1,0.3,1)',
+            'out-quint': 'cubic-bezier(0.22,1,0.36,1)'
+          },
+          keyframes: {
+            drift: { '0%,100%': { transform: 'translate(0,0) scale(1)' }, '50%': { transform: 'translate(6%,-4%) scale(1.08)' } },
+            blink: { '50%': { opacity: '0' } },
+            'pulse-ring': { '0%': { transform: 'scale(.8)', opacity: '.7' }, '100%': { transform: 'scale(2.2)', opacity: '0' } }
+          },
+          animation: {
+            drift: 'drift 22s ease-in-out infinite',
+            blink: 'blink 1s steps(2) infinite',
+            'spin-slow': 'spin 12s linear infinite',
+            'pulse-ring': 'pulse-ring 1.8s cubic-bezier(0.16,1,0.3,1) infinite'
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com/">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+  <link href="portfolio_files/css2.css" rel="stylesheet">
+
+  <!--
+    Custom CSS: tokens, reveal states, aurora/grain, caret, timeline and a few
+    effects Tailwind utilities can't express. Plain <style> so first paint is correct.
+  -->
+  <style>
+    /* ---------- 1. Design tokens (RGB channels) ---------- */
+    :root {
+      --bg: 250 248 245;
+      --surface: 255 255 255;
+      --ink: 21 18 31;
+      --muted: 91 88 112;
+      --line: 231 227 238;
+      --primary: 109 74 255;
+      --on-primary: 255 255 255;
+      --accent: 229 72 109;
+      --teal: 20 184 166;
+
+      --gradient: linear-gradient(100deg, rgb(var(--primary)), rgb(var(--accent)));
+      --gradient-v: linear-gradient(180deg, rgb(var(--primary)), rgb(var(--accent)));
+
+      --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+      --ease-out-quint: cubic-bezier(0.22, 1, 0.36, 1);
+      --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+      --shadow-card: 0 1px 0 rgb(255 255 255 / .6) inset, 0 24px 48px -24px rgb(21 18 31 / .25);
+      --shadow-card-hover: 0 1px 0 rgb(255 255 255 / .6) inset, 0 32px 64px -24px rgb(21 18 31 / .35);
+      --grain-opacity: .05;
+      color-scheme: light;
+    }
+
+    .dark {
+      --bg: 13 11 23;
+      --surface: 23 20 39;
+      --ink: 243 240 250;
+      --muted: 167 161 191;
+      --line: 42 38 64;
+      --primary: 160 140 255;
+      --on-primary: 13 11 23;
+      --accent: 255 143 166;
+      --teal: 45 212 191;
+
+      --shadow-card: 0 1px 0 rgb(255 255 255 / .05) inset, 0 24px 48px -24px rgb(0 0 0 / .6);
+      --shadow-card-hover: 0 1px 0 rgb(255 255 255 / .07) inset, 0 32px 64px -24px rgb(0 0 0 / .75);
+      --grain-opacity: .07;
+      color-scheme: dark;
+    }
+
+    /* ---------- 2. Base ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
+    }
+
+    body {
+      background: rgb(var(--bg));
+      color: rgb(var(--ink));
+      font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden; /* fallback for older Safari */
+      overflow-x: clip;   /* no horizontal scroll, keeps position: sticky working */
+      transition: background-color .4s var(--ease-in-out), color .4s var(--ease-in-out);
+    }
+
+    /* Film grain overlay */
+    body::after {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: 70;
+      pointer-events: none;
+      opacity: var(--grain-opacity);
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+      background-size: 160px;
+    }
+
+    ::selection { background: rgb(var(--primary) / .25); }
+
+    /* One focus style for every interactive element (never removed) */
+    :focus-visible {
+      outline: 2px solid rgb(var(--primary));
+      outline-offset: 4px;
+    }
+
+    /* ---------- 3. Signature gradient + editorial helpers ---------- */
+    .gradient-text {
+      background-image: var(--gradient);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      padding-right: .06em; /* keeps italic overhang from being clipped */
+    }
+
+
+    /* Key phrases: emphasised by colour only */
+    .highlight { color: rgb(var(--primary)); font-weight: 600; }
+
+    .progress-bar {
+      background: var(--gradient);
+      transform-origin: left;
+      transform: scaleX(var(--progress, 0));
+    }
+
+    /* ---------- 4. Aurora background ---------- */
+    .aurora-blob {
+      position: absolute;
+      width: min(70vmax, 900px);
+      aspect-ratio: 1;
+      border-radius: 50%;
+      will-change: transform;
+    }
+    .aurora .blob-1 {
+      top: -18%;
+      left: -12%;
+      background: radial-gradient(closest-side, rgb(var(--primary) / .35), transparent);
+      animation-duration: 22s;
+    }
+    .aurora .blob-2 {
+      top: 25%;
+      right: -18%;
+      background: radial-gradient(closest-side, rgb(var(--accent) / .32), transparent);
+      animation-duration: 26s;
+      animation-direction: reverse;
+    }
+    .aurora .blob-3 {
+      bottom: -22%;
+      left: 18%;
+      background: radial-gradient(closest-side, rgb(var(--teal) / .28), transparent);
+      animation-duration: 18s;
+      animation-delay: -6s;
+    }
+
+    /* ---------- 5. Avatar ring ---------- */
+    .avatar-ring {
+      background: conic-gradient(from 0deg, rgb(var(--primary)), rgb(var(--accent)), rgb(var(--teal)), rgb(var(--primary)));
+    }
+
+    /* ---------- 6. Typing caret ---------- */
+    .caret {
+      display: inline-block;
+      width: 2px;
+      height: 1.1em;
+      margin-left: 3px;
+      vertical-align: -0.18em;
+      background: rgb(var(--primary));
+    }
+    .caret.is-typing { animation: none; opacity: 1; } /* solid while characters are added */
+
+    /* ---------- 7. Scroll reveals (hidden state only when JS runs) ---------- */
+    .js [data-reveal] {
+      transition:
+        opacity .8s var(--ease-out-expo),
+        transform .8s var(--ease-out-expo),
+        filter .8s var(--ease-out-expo);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+    .js [data-reveal]:not(.is-visible)                       { opacity: 0; transform: translateY(24px); }
+    .js [data-reveal="blur-in"]:not(.is-visible)             { filter: blur(12px); transform: scale(.98); }
+    .js [data-reveal="slide-left"]:not(.is-visible)          { transform: translateX(-40px); }
+    .js [data-reveal="slide-right"]:not(.is-visible)         { transform: translateX(40px); }
+    .js [data-reveal="scale-in"]:not(.is-visible)            { transform: scale(.94); }
+
+    /* ---------- 8. Hero headline word split ---------- */
+    .js [data-split]:not(.is-split) { opacity: 0; }
+    .hero-word { display: inline-block; }
+    .js .hero-word {
+      transition:
+        opacity .7s var(--ease-out-expo),
+        transform .7s var(--ease-out-expo),
+        filter .7s var(--ease-out-expo);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+    .js .hero-word:not(.is-visible) { opacity: 0; filter: blur(12px); transform: translateY(.15em) scale(.98); }
+
+    /* ---------- 9. Nav, chapter rail, mobile menu ---------- */
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: "";
+      position: absolute;
+      left: .75rem;
+      right: .75rem;
+      bottom: .6rem;
+      height: 2px;
+      border-radius: 2px;
+      background: var(--gradient);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform .3s var(--ease-out-quint);
+    }
+    .nav-link:hover::after,
+    .nav-link.is-active::after { transform: scaleX(1); }
+    .nav-link.is-active { color: rgb(var(--ink)); }
+
+    .mobile-link.is-active { color: rgb(var(--primary)); background: rgb(var(--primary) / .08); }
+
+    .js .mobile-menu {
+      transition:
+        opacity .25s var(--ease-out-quint),
+        transform .25s var(--ease-out-quint),
+        visibility 0s linear .25s;
+    }
+    .js .mobile-menu:not(.is-open) { opacity: 0; visibility: hidden; transform: translateY(-8px); }
+    .js .mobile-menu.is-open { transition-delay: 0s; }
+
+    .rail-link { position: relative; }
+    .rail-link::before {
+      content: "";
+      position: absolute;
+      left: calc(-1rem - 1.5px);
+      top: 15%;
+      bottom: 15%;
+      width: 2px;
+      border-radius: 2px;
+      background: var(--gradient-v);
+      transform: scaleY(0);
+      transition: transform .3s var(--ease-out-quint);
+    }
+    .rail-num {
+      display: inline-block;
+      color: rgb(var(--muted));
+      transform-origin: left center;
+      transition: transform .3s var(--ease-out-quint), color .3s var(--ease-out-quint);
+    }
+    .rail-link.is-active::before { transform: scaleY(1); }
+    .rail-link.is-active .rail-num { color: rgb(var(--primary)); transform: scale(1.35); }
+
+    /* ---------- 10. Timeline (scroll-drawn fill + dots) ---------- */
+    .timeline-fill {
+      background: var(--gradient-v);
+      transform-origin: top;
+      transform: scaleY(1);               /* fully drawn without JS */
+    }
+    .js .timeline-fill { transform: scaleY(var(--progress, 0)); }
+
+    .timeline-dot {
+      position: absolute;
+      top: 2rem;
+      left: 1rem;
+      width: 14px;
+      height: 14px;
+      border-radius: 9999px;
+      background: rgb(var(--bg));
+      box-shadow: 0 0 0 2px rgb(var(--line));
+      transform: translateX(-50%) scale(1);
+      transition: transform .4s var(--ease-out-quint), box-shadow .4s var(--ease-out-quint);
+    }
+    .timeline-dot::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: var(--gradient);
+      transition: opacity .4s var(--ease-out-quint);
+    }
+    .timeline-dot.is-passed { box-shadow: 0 0 0 4px rgb(var(--primary) / .18); }
+    .js .timeline-dot:not(.is-passed) { transform: translateX(-50%) scale(.6); }
+    .js .timeline-dot:not(.is-passed)::after { opacity: 0; }
+    .timeline-dot--open { box-shadow: 0 0 0 2px rgb(var(--primary)); }
+    @media (min-width: 768px) {
+      .timeline-dot { left: 50%; }
+    }
+
+    /* ---------- 11. Cursor + project thumbnails ---------- */
+    /* Everything clickable shows a pointer; nothing on the page moves on hover. */
+    a[href], button:not(:disabled), summary, label[for], [role="button"] { cursor: pointer; }
+
+    .thumb {
+      background:
+        radial-gradient(120% 90% at 85% 10%, rgb(255 255 255 / .28), transparent 50%),
+        linear-gradient(135deg, var(--h1), var(--h2));
+    }
+
+    /* ---------- 12. Scroll cue + toast ---------- */
+    .scroll-cue-line {
+      position: relative;
+      display: block;
+      width: 1px;
+      height: 40px;
+      overflow: hidden;
+      background: rgb(var(--line));
+    }
+    .scroll-cue-line::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: var(--gradient-v);
+      animation: scroll-cue 2s var(--ease-in-out) infinite;
+    }
+    @keyframes scroll-cue {
+      0%   { transform: translateY(-100%); }
+      100% { transform: translateY(100%); }
+    }
+
+    .toast {
+      max-width: calc(100vw - 2rem);
+      pointer-events: none;
+      opacity: 0;
+      transform: translate(-50%, 1.5rem);
+      transition: opacity .3s var(--ease-out-quint), transform .3s var(--ease-out-quint);
+    }
+    .toast.is-open { opacity: 1; transform: translate(-50%, 0); }
+
+    /* ---------- 12b. Résumé viewer (native <dialog>) ---------- */
+    .resume-dialog::backdrop { background: rgb(13 11 23 / .6); backdrop-filter: blur(4px); }
+    .resume-dialog[open] { animation: dialog-in .3s var(--ease-out-quint); }
+    @keyframes dialog-in {
+      from { opacity: 0; transform: translateY(12px) scale(.98); }
+      to   { opacity: 1; transform: none; }
+    }
+    html:has(.resume-dialog[open]) { overflow: hidden; }
+
+    /* ---------- 13. Reduced motion (class set from prefers-reduced-motion) ---------- */
+    .reduce-motion [data-reveal],
+    .reduce-motion .hero-word {
+      transform: none !important;
+      filter: none !important;
+      transition: opacity .2s linear !important;
+    }
+    .reduce-motion .aurora-blob,
+    .reduce-motion .animate-spin-slow,
+    .reduce-motion .animate-pulse-ring,
+    .reduce-motion .animate-blink,
+    .reduce-motion .scroll-cue-line::after { animation: none !important; }
+    .reduce-motion .animate-pulse-ring { opacity: 0; }
+    .reduce-motion .scroll-cue-line::after { transform: none; }
+    .reduce-motion .caret { display: none; }
+    .reduce-motion .resume-dialog[open] { animation: none; }
+    .reduce-motion .timeline-fill { transform: none !important; }
+    .reduce-motion .timeline-dot { transform: translateX(-50%) !important; }
+    .reduce-motion .timeline-dot::after { opacity: 1 !important; }
+  </style>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Plus Jakarta Sans", system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"JetBrains Mono", ui-monospace, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-1{inset:0.25rem}.inset-\[4px\]{inset:4px}.inset-x-0{left:0px;right:0px}.bottom-0{bottom:0px}.bottom-2{bottom:0.5rem}.bottom-\[8\%\]{bottom:8%}.left-4{left:1rem}.left-5{left:1.25rem}.left-6{left:1.5rem}.right-\[8\%\]{right:8%}.top-0{top:0px}.top-1\/2{top:50%}.top-4{top:1rem}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.-z-10{z-index:-10}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.z-\[60\]{z-index:60}.z-\[80\]{z-index:80}.m-auto{margin:auto}.mx-auto{margin-left:auto;margin-right:auto}.mb-14{margin-bottom:3.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-auto{margin-left:auto}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-14{margin-top:3.5rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.inline{display:inline}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[16\/10\]{aspect-ratio:16/10}.h-11{height:2.75rem}.h-12{height:3rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[3px\]{height:3px}.h-full{height:100%}.h-10{height:2.5rem}.h-2\.5{height:0.625rem}.h-\[min\(80vh\2c 64rem\)\]{height:min(80vh,64rem)}.min-h-screen{min-height:100vh}.min-h-\[100svh\]{min-height:100svh}.min-h-\[3em\]{min-height:3em}.w-0\.5{width:0.125rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.w-10{width:2.5rem}.w-2\.5{width:0.625rem}.w-\[min\(60rem\2c calc\(100vw-2rem\)\)\]{width:min(60rem,calc(100vw - 2rem))}.min-w-0{min-width:0px}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-prose{max-width:65ch}.max-w-4xl{max-width:56rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes blink{50%{opacity:0}}.animate-blink{animation:blink 1s steps(2) infinite}@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6%,-4%) scale(1.08)}}.animate-drift{animation:drift 22s ease-in-out infinite}@keyframes pulse-ring{0%{transform:scale(.8);opacity:.7}100%{transform:scale(2.2);opacity:0}}.animate-pulse-ring{animation:pulse-ring 1.8s cubic-bezier(0.16,1,0.3,1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin-slow{animation:spin 12s linear infinite}.scroll-mt-24{scroll-margin-top:6rem}.list-disc{list-style-type:disc}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-x-3{column-gap:0.75rem}.gap-x-6{column-gap:1.5rem}.gap-y-1{row-gap:0.25rem}.gap-y-2{row-gap:0.5rem}.space-y-10 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2.5rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-line\/70 > :not([hidden]) ~ :not([hidden]){border-color:rgb(var(--line) / 0.7)}.divide-line > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(var(--line) / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-l{border-left-width:1px}.border-l-2{border-left-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-line{--tw-border-opacity:1;border-color:rgb(var(--line) / var(--tw-border-opacity, 1))}.border-line\/70{border-color:rgb(var(--line) / 0.7)}.border-primary\/30{border-color:rgb(var(--primary) / 0.3)}.border-primary\/60{border-color:rgb(var(--primary) / 0.6)}.bg-bg{--tw-bg-opacity:1;background-color:rgb(var(--bg) / var(--tw-bg-opacity, 1))}.bg-bg\/60{background-color:rgb(var(--bg) / 0.6)}.bg-ink{--tw-bg-opacity:1;background-color:rgb(var(--ink) / var(--tw-bg-opacity, 1))}.bg-line{--tw-bg-opacity:1;background-color:rgb(var(--line) / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(var(--primary) / 0.1)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(var(--surface) / var(--tw-bg-opacity, 1))}.bg-surface\/60{background-color:rgb(var(--surface) / 0.6)}.bg-surface\/70{background-color:rgb(var(--surface) / 0.7)}.bg-surface\/90{background-color:rgb(var(--surface) / 0.9)}.bg-teal{--tw-bg-opacity:1;background-color:rgb(var(--teal) / var(--tw-bg-opacity, 1))}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-0{padding:0px}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-10{padding-bottom:2.5rem}.pl-1\.5{padding-left:0.375rem}.pl-12{padding-left:3rem}.pl-4{padding-left:1rem}.pl-5{padding-left:1.25rem}.pr-1\.5{padding-right:0.375rem}.pt-28{padding-top:7rem}.pr-3{padding-right:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Fraunces, Georgia, serif}.font-mono{font-family:"JetBrains Mono", ui-monospace, monospace}.font-sans{font-family:"Plus Jakarta Sans", system-ui, sans-serif}.text-base{font-size:1rem;line-height:1.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-7xl{font-size:4.5rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tabular-nums{--tw-numeric-spacing:tabular-nums;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)}.leading-\[0\.95\]{line-height:0.95}.leading-\[1\.05\]{line-height:1.05}.leading-none{line-height:1}.leading-normal{line-height:1.5}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-\[1\.02\]{line-height:1.02}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-tight{letter-spacing:-0.025em}.text-bg{--tw-text-opacity:1;color:rgb(var(--bg) / var(--tw-text-opacity, 1))}.text-ink{--tw-text-opacity:1;color:rgb(var(--ink) / var(--tw-text-opacity, 1))}.text-muted{--tw-text-opacity:1;color:rgb(var(--muted) / var(--tw-text-opacity, 1))}.text-on-primary{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(var(--primary) / var(--tw-text-opacity, 1))}.text-white\/25{color:rgb(255 255 255 / 0.25)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.shadow-card{--tw-shadow:var(--shadow-card);--tw-shadow-colored:var(--shadow-card);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-card-hover{--tw-shadow:var(--shadow-card-hover);--tw-shadow-colored:var(--shadow-card-hover);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-\[border-color\2c box-shadow\]{transition-property:border-color,box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.ease-out-quint{transition-timing-function:cubic-bezier(0.22,1,0.36,1)}.marker\:text-primary *::marker{color:rgb(var(--primary) )}.marker\:text-primary::marker{color:rgb(var(--primary) )}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(var(--primary) / var(--tw-border-opacity, 1))}.hover\:border-primary\/50:hover{border-color:rgb(var(--primary) / 0.5)}.hover\:bg-line\/60:hover{background-color:rgb(var(--line) / 0.6)}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/10:hover{background-color:rgb(var(--primary) / 0.1)}.hover\:bg-primary\/90:hover{background-color:rgb(var(--primary) / 0.9)}.hover\:text-ink:hover{--tw-text-opacity:1;color:rgb(var(--ink) / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(var(--primary) / var(--tw-text-opacity, 1))}.hover\:shadow-card-hover:hover{--tw-shadow:var(--shadow-card-hover);--tw-shadow-colored:var(--shadow-card-hover);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:fixed:focus{position:fixed}.focus\:left-4:focus{left:1rem}.focus\:top-4:focus{top:1rem}.focus\:z-\[90\]:focus{z-index:90}.focus\:rounded-full:focus{border-radius:9999px}.focus\:bg-primary:focus{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.focus\:px-5:focus{padding-left:1.25rem;padding-right:1.25rem}.focus\:py-3:focus{padding-top:0.75rem;padding-bottom:0.75rem}.focus\:font-semibold:focus{font-weight:600}.focus\:text-on-primary:focus{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:-translate-y-0\.5{--tw-translate-y:-0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-0\.5{--tw-translate-x:0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-primary{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-on-primary{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}.group:focus-visible .group-focus-visible\:opacity-100{opacity:1}.group[aria-expanded="true"] .group-aria-expanded\:block{display:block}.group[aria-expanded="true"] .group-aria-expanded\:hidden{display:none}.dark\:block:is(.dark *){display:block}.dark\:hidden:is(.dark *){display:none}@media (min-width: 640px){.sm\:inline-flex{display:inline-flex}.sm\:min-h-\[1\.5em\]{min-height:1.5em}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:p-6{padding:1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pl-6{padding-left:1.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-7xl{font-size:4.5rem;line-height:1}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 768px){.md\:left-1\/2{left:50%}.md\:col-span-2{grid-column:span 2 / span 2}.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-6{grid-column:span 6 / span 6}.md\:col-start-2{grid-column-start:2}.md\:mb-20{margin-bottom:5rem}.md\:mb-8{margin-bottom:2rem}.md\:ml-2{margin-left:0.5rem}.md\:mt-24{margin-top:6rem}.md\:inline{display:inline}.md\:flex{display:flex}.md\:grid{display:grid}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.md\:grid-cols-\[10rem_1fr\]{grid-template-columns:10rem 1fr}.md\:flex-row{flex-direction:row}.md\:flex-col{flex-direction:column}.md\:items-start{align-items:flex-start}.md\:justify-center{justify-content:center}.md\:justify-between{justify-content:space-between}.md\:gap-10{gap:2.5rem}.md\:gap-16{gap:4rem}.md\:gap-6{gap:1.5rem}.md\:space-y-14 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3.5rem * var(--tw-space-y-reverse))}.md\:p-8{padding:2rem}.md\:px-10{padding-left:2.5rem;padding-right:2.5rem}.md\:py-36{padding-top:9rem;padding-bottom:9rem}.md\:pl-0{padding-left:0px}.md\:pt-14{padding-top:3.5rem}.md\:pt-32{padding-top:8rem}.md\:pl-2{padding-left:0.5rem}.md\:text-left{text-align:left}.md\:text-center{text-align:center}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-8xl{font-size:6rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-7xl{font-size:4.5rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:h-56{height:14rem}.lg\:w-56{width:14rem}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-\[auto_1fr\]{grid-template-columns:auto 1fr}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:items-center{align-items:center}.lg\:gap-10{gap:2.5rem}.lg\:gap-16{gap:4rem}.lg\:p-8{padding:2rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-8xl{font-size:6rem;line-height:1}}@media (min-width: 1280px){.xl\:block{display:block}.xl\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1536px){.group.is-active .\32xl\:group-\[\.is-active\]\:opacity-100{opacity:1}}</style></head>
+
+<body class="min-h-screen text-base antialiased">
+
+  <!-- Skip link -->
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[90] focus:rounded-full focus:bg-primary focus:px-5 focus:py-3 focus:font-semibold focus:text-on-primary">Skip to content</a>
+
+  <!-- Scroll progress bar -->
+  <div class="progress-bar fixed inset-x-0 top-0 z-[60] h-[3px]" data-progress="" aria-hidden="true" style="--progress: 0;"></div>
+
+  <!-- Aurora background (decorative) -->
+  <div class="aurora pointer-events-none fixed inset-0 -z-10 overflow-hidden" aria-hidden="true">
+    <div class="aurora-blob blob-1 animate-drift"></div>
+    <div class="aurora-blob blob-2 animate-drift"></div>
+    <div class="aurora-blob blob-3 animate-drift"></div>
+  </div>
+
+  <!-- ==================== NAV ==================== -->
+  <header class="fixed inset-x-0 top-4 z-50 px-4">
+    <nav aria-label="Primary" class="mx-auto flex max-w-5xl items-center gap-2 rounded-full border border-line/70 bg-surface/70 py-1.5 pl-1.5 pr-1.5 shadow-card backdrop-blur-md">
+      <!-- EDIT: nav.initials -->
+      <a href="#hello" class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-ink font-display text-base font-semibold text-bg transition-colors duration-300 hover:bg-primary" aria-label="Vanni Dinh, back to top">VD</a>
+
+      <ul class="ml-auto hidden items-center md:flex">
+        <li><a href="#about" data-nav-link="" class="nav-link inline-flex h-11 items-center px-3 text-sm font-medium text-muted transition-colors hover:text-ink">About</a></li>
+        <li><a href="#journey" data-nav-link="" class="nav-link inline-flex h-11 items-center px-3 text-sm font-medium text-muted transition-colors hover:text-ink">Experience</a></li>
+        <li><a href="#projects" data-nav-link="" class="nav-link inline-flex h-11 items-center px-3 text-sm font-medium text-muted transition-colors hover:text-ink">Projects</a></li>
+        <li><a href="#milestones" data-nav-link="" class="nav-link inline-flex h-11 items-center px-3 text-sm font-medium text-muted transition-colors hover:text-ink">Education</a></li>
+        <li><a href="#contact" data-nav-link="" class="nav-link inline-flex h-11 items-center px-3 text-sm font-medium text-muted transition-colors hover:text-ink">Contact</a></li>
+      </ul>
+
+      <div class="ml-auto flex items-center gap-1 md:ml-2">
+        <!-- Theme toggle -->
+        <button type="button" data-theme-toggle="" aria-pressed="true" aria-label="Dark mode" title="Switch to light theme" class="grid h-11 w-11 place-items-center rounded-full text-muted transition-colors hover:bg-line/60 hover:text-ink">
+          <!-- moon (shown in light mode) -->
+          <svg class="h-5 w-5 dark:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"></path></svg>
+          <!-- sun (shown in dark mode) -->
+          <svg class="hidden h-5 w-5 dark:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+        </button>
+
+        <a href="#contact" class="hidden h-11 items-center rounded-full bg-primary px-5 text-sm font-semibold text-on-primary transition duration-300 ease-out-quint hover:bg-primary/90 hover:shadow-card-hover sm:inline-flex">Let's talk</a>
+
+        <!-- Mobile menu button -->
+        <button type="button" data-menu-toggle="" aria-expanded="false" aria-controls="mobile-menu" aria-label="Menu" class="group grid h-11 w-11 place-items-center rounded-full text-ink transition-colors hover:bg-line/60 md:hidden">
+          <svg class="h-5 w-5 group-aria-expanded:hidden" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+          <svg class="hidden h-5 w-5 group-aria-expanded:block" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </nav>
+
+    <!-- Mobile menu panel -->
+    <div id="mobile-menu" class="mobile-menu mx-auto mt-2 max-w-5xl rounded-3xl border border-line/70 bg-surface/90 p-2 shadow-card backdrop-blur-md md:hidden">
+      <ul class="flex flex-col">
+        <li><a href="#about" data-nav-link="" class="mobile-link flex h-12 items-center rounded-2xl px-4 font-medium transition-colors hover:bg-line/60">About</a></li>
+        <li><a href="#journey" data-nav-link="" class="mobile-link flex h-12 items-center rounded-2xl px-4 font-medium transition-colors hover:bg-line/60">Experience</a></li>
+        <li><a href="#projects" data-nav-link="" class="mobile-link flex h-12 items-center rounded-2xl px-4 font-medium transition-colors hover:bg-line/60">Projects</a></li>
+        <li><a href="#milestones" data-nav-link="" class="mobile-link flex h-12 items-center rounded-2xl px-4 font-medium transition-colors hover:bg-line/60">Education</a></li>
+        <li><a href="#contact" data-nav-link="" class="mobile-link flex h-12 items-center rounded-2xl px-4 font-medium transition-colors hover:bg-line/60">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- ==================== CHAPTER RAIL (xl+) ==================== -->
+  <nav aria-label="Chapters" class="fixed left-6 top-1/2 z-40 hidden -translate-y-1/2 xl:block">
+    <ol class="flex flex-col gap-3 border-l border-line pl-4">
+      <li><a href="#hello" data-rail-link="" class="rail-link group flex h-8 items-center gap-3 font-mono text-xs is-active" aria-current="true"><span class="rail-num">01</span><span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 2xl:group-[.is-active]:opacity-100">Intro</span></a></li>
+      <li><a href="#about" data-rail-link="" class="rail-link group flex h-8 items-center gap-3 font-mono text-xs"><span class="rail-num">02</span><span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 2xl:group-[.is-active]:opacity-100">About</span></a></li>
+      <li><a href="#journey" data-rail-link="" class="rail-link group flex h-8 items-center gap-3 font-mono text-xs"><span class="rail-num">03</span><span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 2xl:group-[.is-active]:opacity-100">Experience</span></a></li>
+      <li><a href="#projects" data-rail-link="" class="rail-link group flex h-8 items-center gap-3 font-mono text-xs"><span class="rail-num">04</span><span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 2xl:group-[.is-active]:opacity-100">Projects</span></a></li>
+      <li><a href="#milestones" data-rail-link="" class="rail-link group flex h-8 items-center gap-3 font-mono text-xs"><span class="rail-num">05</span><span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 2xl:group-[.is-active]:opacity-100">Education</span></a></li>
+      <li><a href="#contact" data-rail-link="" class="rail-link group flex h-8 items-center gap-3 font-mono text-xs"><span class="rail-num">06</span><span class="text-muted opacity-0 transition-opacity duration-300 group-hover:opacity-100 group-focus-visible:opacity-100 2xl:group-[.is-active]:opacity-100">Contact</span></a></li>
+    </ol>
+  </nav>
+
+  <main id="main">
+
+    <!-- ==================== CHAPTER 01: HELLO (hero) ==================== -->
+    <section id="hello" aria-labelledby="hello-title" data-hero="" class="relative flex min-h-[100svh] scroll-mt-24 flex-col pb-10 pt-28 md:pt-32">
+      <div class="relative mx-auto flex w-full max-w-6xl flex-1 items-center px-4 sm:px-6 lg:px-8">
+
+        <!-- Background numeral -->
+
+        <div class="relative grid w-full items-center gap-10 lg:grid-cols-[auto_1fr] lg:gap-16">
+
+          <!-- EDIT: hello.avatar — to use a photo, replace the <svg> below with:
+               <img src="assets/profile.jpg" alt="Portrait of Vanni Dinh" width="224" height="224" class="h-full w-full rounded-full object-cover"> -->
+          <div data-reveal="scale-in" data-delay="0" class="relative h-40 w-40 lg:h-56 lg:w-56 is-visible" style="--reveal-delay: 0ms;">
+            <div class="avatar-ring absolute inset-0 animate-spin-slow rounded-full" aria-hidden="true"></div>
+            <div class="absolute inset-[4px] rounded-full bg-bg p-1.5">
+              <svg viewBox="0 0 200 200" role="img" aria-label="Vanni Dinh" class="h-full w-full rounded-full">
+                <defs>
+                  <linearGradient id="avatar-gradient" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0" stop-color="#6D4AFF"></stop>
+                    <stop offset="1" stop-color="#E5486D"></stop>
+                  </linearGradient>
+                </defs>
+                <circle cx="100" cy="100" r="100" fill="url(#avatar-gradient)"></circle>
+                <text x="50%" y="52%" text-anchor="middle" dominant-baseline="middle" font-family="Fraunces, Georgia, serif" font-size="76" font-weight="600" fill="#FFFFFF">VD</text>
+              </svg>
+            </div>
+            <!-- EDIT: hello.status -->
+            <span class="absolute bottom-[8%] right-[8%] flex h-5 w-5 items-center justify-center rounded-full bg-bg" role="img" aria-label="Open to analyst roles" title="Open to analyst roles">
+              <span class="absolute inset-1 animate-pulse-ring rounded-full bg-teal" aria-hidden="true"></span>
+              <span class="relative h-3 w-3 rounded-full bg-teal" aria-hidden="true"></span>
+            </span>
+          </div>
+
+          <div class="min-w-0">
+            <!-- EDIT: hello.eyebrow -->
+            <p data-reveal="" data-delay="150" class="font-mono text-xs uppercase tracking-[0.2em] text-primary is-visible" style="--reveal-delay: 150ms;">Portfolio · Wollongong, NSW</p>
+
+            <!-- EDIT: hello.name -->
+            <h1 id="hello-title" data-split="" class="mt-4 font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl is-split"><span class="hero-word is-visible" style="--reveal-delay: 300ms;">Hi,</span> <span class="hero-word is-visible" style="--reveal-delay: 380ms;">I'm</span> <span class="hero-word gradient-text italic is-visible" style="--reveal-delay: 460ms;">Vanni</span> <span class="hero-word gradient-text italic is-visible" style="--reveal-delay: 540ms;">Dinh.</span></h1>
+
+            <!-- Typed role line. EDIT the roles in CONTENT (script at the bottom); the text below only shows if JS is off. -->
+            <p data-reveal="" data-delay="700" class="mt-6 min-h-[3em] font-mono text-xl leading-normal sm:min-h-[1.5em] md:text-2xl is-visible" style="--reveal-delay: 700ms;">
+              <span aria-hidden="true">I'm <span class="text-primary" data-typed="roles">a Business Ana</span><span class="caret animate-blink is-typing" data-caret=""></span></span>
+              <span class="sr-only" data-typed-sr="roles">I'm a Data Analyst, a Business Analyst, a Power BI Dashboard Builder, and a Master of IT Student.</span>
+            </p>
+
+            <!-- EDIT: hello.summary -->
+            <p data-reveal="" data-delay="850" class="mt-5 max-w-prose text-base leading-relaxed text-muted md:text-lg is-visible" style="--reveal-delay: 850ms;">
+              I'm a final-semester Master of Information Technology 
+student at the University of Wollongong, majoring in Enterprise Systems 
+and Information Design &amp; Analysis. With a strong academic background
+ in finance, banking and accounting and hands-on retail banking 
+experience, I build business data analyses and dashboards with Power BI,
+ SQL and Tableau. I'm looking for an entry-level Data Analyst or 
+Business Analyst role where business, data and technology meet.
+            </p>
+
+            <!-- EDIT: hello.ctas -->
+            <div data-reveal="" data-hero-late="" data-delay="0" class="mt-8 flex flex-wrap items-center gap-3 is-visible" style="--reveal-delay: 0ms;">
+              <a href="#projects" class="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 font-semibold text-on-primary shadow-card transition duration-300 ease-out-quint hover:bg-primary/90 hover:shadow-card-hover">
+                View my work
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg>
+              </a>
+              <a href="./assets/resume.pdf" target="_blank" rel="noopener" data-resume-open="" class="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/60 px-6 font-semibold text-ink transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+                View résumé
+              </a>
+            </div>
+
+            <!-- EDIT: hello.socials -->
+            <ul data-reveal="" data-hero-late="" data-delay="120" class="mt-6 flex items-center gap-2 is-visible" aria-label="Social profiles" style="--reveal-delay: 120ms;">
+              <li>
+                <a href="https://www.linkedin.com/in/vannidinh" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)" class="grid h-11 w-11 place-items-center rounded-full border border-line/70 bg-surface/60 text-muted transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                </a>
+              </li>
+              <li>
+                <a href="https://github.com/sntung" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)" class="grid h-11 w-11 place-items-center rounded-full border border-line/70 bg-surface/60 text-muted transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+                  <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- Scroll cue -->
+      <div data-reveal="" data-hero-late="" data-delay="300" class="relative mt-14 flex flex-col items-center gap-3 px-4 text-center is-visible" style="--reveal-delay: 300ms;">
+        <a href="#about" class="flex flex-col items-center gap-3 font-mono text-xs uppercase tracking-[0.3em] text-muted transition-colors hover:text-primary">
+          Scroll<span class="sr-only"> to About</span>
+          <span class="scroll-cue-line" aria-hidden="true"></span>
+        </a>
+      </div>
+    </section>
+
+    <!-- ==================== 02: ABOUT ==================== -->
+    <section id="about" aria-labelledby="about-title" class="relative scroll-mt-24 py-24 md:py-36">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <div class="relative mb-14 md:mb-20">
+          <!-- EDIT: about.title -->
+          <h2 id="about-title" data-reveal="blur-in" class="relative max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">About</h2>
+        </div>
+
+        <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+
+          <!-- Narrative -->
+          <div class="lg:col-span-7">
+            <!-- EDIT: about.paragraph -->
+            <p data-reveal="" class="max-w-prose text-lg leading-relaxed text-muted md:text-xl">
+              I combine a finance and banking foundation with data and 
+business analysis. I hold a dual degree in Finance, Banking and 
+Accounting from the Academy of Finance and the University of Greenwich 
+(First Class Honours, graduating valedictorian) and gained retail 
+banking experience at SHB. I turn data into <span class="highlight">dashboards and clear recommendations</span>, with strengths in <span class="highlight">stakeholder communication</span> and <span class="highlight">problem solving</span>.
+            </p>
+            <!-- TODO: optionally add a personal-touch line here (hobbies, interests) — not in the résumé -->
+
+            <!-- EDIT: about.currently -->
+            <div data-reveal="" class="mt-10">
+              <div class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md">
+                <p class="font-mono text-xs uppercase tracking-[0.2em] text-muted">Currently</p>
+                <dl class="mt-4 grid gap-4 sm:grid-cols-3">
+                  <div>
+                    <dt class="text-sm text-muted">Studying</dt>
+                    <dd class="mt-1 font-semibold">Master of IT, final semester</dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm text-muted">Graduating</dt>
+                    <dd class="mt-1 font-semibold">Dec 2026</dd>
+                  </div>
+                  <div>
+                    <dt class="text-sm text-muted">Based in</dt>
+                    <dd class="mt-1 font-semibold">Wollongong, NSW</dd>
+                  </div>
+                </dl>
+              </div>
+            </div>
+          </div>
+
+          <!-- Stat cards (count up). EDIT: about.stats — final value goes in the text AND data-count. -->
+          <div class="lg:col-span-5">
+            <ul data-reveal-group="" class="grid grid-cols-2 gap-4">
+              <li data-reveal="scale-in" style="--reveal-delay: 0ms;">
+                <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
+                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="83.9" data-decimals="1">83.9</span></p>
+                  <p class="mt-2 text-sm text-muted">WAM at UOW</p>
+                </div>
+              </li>
+              <li data-reveal="scale-in" style="--reveal-delay: 90ms;">
+                <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
+                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="3.89" data-decimals="2">3.89</span></p>
+                  <p class="mt-2 text-sm text-muted">GPA · Valedictorian</p>
+                </div>
+              </li>
+              <li data-reveal="scale-in" style="--reveal-delay: 180ms;">
+                <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
+                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="4" data-decimals="0">4</span></p>
+                  <p class="mt-2 text-sm text-muted">Analytics projects</p>
+                </div>
+              </li>
+              <li data-reveal="scale-in" style="--reveal-delay: 270ms;">
+                <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
+                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="2" data-decimals="0">2</span></p>
+                  <p class="mt-2 text-sm text-muted">Certifications</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Skills. EDIT: about.skills -->
+        <div class="mt-16 md:mt-24">
+          <h3 data-reveal="" class="font-mono text-xs uppercase tracking-[0.2em] text-muted">Skills &amp; tools</h3>
+          <div data-reveal-group="" class="mt-6 grid gap-4 md:grid-cols-2">
+            <div data-reveal="" class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md" style="--reveal-delay: 0ms;">
+              <p class="font-display text-xl font-semibold">Data Analytics</p>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Power BI</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Power Query</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">DAX</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">SQL</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Tableau</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Excel</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">SPSS</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Data Visualisation</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Dashboard Development</li>
+              </ul>
+            </div>
+            <div data-reveal="" class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md" style="--reveal-delay: 90ms;">
+              <p class="font-display text-xl font-semibold">Business Analysis &amp; Process Modelling</p>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Requirements Analysis</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Stakeholder Analysis</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Gap Analysis</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">BPMN</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">ArchiMate</li>
+              </ul>
+            </div>
+            <div data-reveal="" class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md" style="--reveal-delay: 180ms;">
+              <p class="font-display text-xl font-semibold">Data &amp; Technical Foundations</p>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Python</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">JSON</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">XML</li>
+              </ul>
+            </div>
+            <div data-reveal="" class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md" style="--reveal-delay: 270ms;">
+              <p class="font-display text-xl font-semibold">Transferable</p>
+              <ul class="mt-4 flex flex-wrap gap-2">
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Stakeholder Communication</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Analytical Thinking</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Team Collaboration</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Organisation &amp; Coordination</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Attention to Detail</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Customer Communication</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 03: EXPERIENCE ==================== -->
+    <section id="journey" aria-labelledby="journey-title" class="relative scroll-mt-24 py-24 md:py-36">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <div class="relative mb-14 md:mb-20">
+          <!-- EDIT: journey.title -->
+          <h2 id="journey-title" data-reveal="blur-in" class="relative max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">Experience</h2>
+        </div>
+
+        <!-- Timeline: track + scroll-drawn fill -->
+        <div class="relative" data-timeline="">
+          <div class="absolute bottom-0 left-4 top-0 w-0.5 -translate-x-1/2 rounded-full bg-line md:left-1/2" aria-hidden="true">
+            <div class="timeline-fill absolute inset-0 rounded-full" data-timeline-fill="" style="--progress: 0.0000;"></div>
+          </div>
+
+          <ol class="relative space-y-10 md:space-y-14">
+
+            <!-- EDIT: journey.item1 -->
+            <li class="relative md:grid md:grid-cols-2 md:gap-16">
+              <span class="timeline-dot" data-timeline-dot="" aria-hidden="true"></span>
+              <div data-reveal="slide-left" class="pl-12 md:pl-0">
+                <article class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md">
+                  <div class="flex items-start gap-4">
+                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary/10 font-display text-lg font-semibold text-primary" aria-hidden="true">D</span>
+                    <div class="min-w-0">
+                      <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <p class="font-mono text-xs text-muted"><time datetime="2020-10">Oct 2020</time> — <time datetime="2023-07">Jul 2023</time></p>
+                        <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">Leadership</span>
+                      </div>
+                      <h3 class="mt-2 font-display text-xl font-semibold md:text-2xl">Deputy Chairperson, Finance &amp; Human Resources</h3>
+                      <p class="text-sm text-muted">DDP Charity Bridge Club (University Student Charity Organisation) · Hanoi, Vietnam</p>
+                    </div>
+                  </div>
+                  <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted marker:text-primary md:text-base">
+                    <li>Coordinated finance and HR operations for a 70-member student charity: recruitment, member allocation and event staffing.</li>
+                    <li>Led the finance team: budgets, income and expenses, reimbursements, fundraising and financial reporting.</li>
+                    <li>Managed financial coordination for the annual 
+charity event (fundraising scale of VND 100–150 million), working with 
+university staff, sponsors and external student organisations.</li>
+                  </ul>
+                  <ul class="mt-5 flex flex-wrap gap-2" aria-label="Skills used">
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Budgeting</li>
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Financial Reporting</li>
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Recruitment</li>
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Stakeholder Coordination</li>
+                  </ul>
+                </article>
+              </div>
+            </li>
+
+            <!-- EDIT: journey.item2 -->
+            <li class="relative md:grid md:grid-cols-2 md:gap-16">
+              <span class="timeline-dot" data-timeline-dot="" aria-hidden="true"></span>
+              <div data-reveal="slide-right" class="pl-12 md:col-start-2 md:pl-0">
+                <article class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md">
+                  <div class="flex items-start gap-4">
+                    <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-primary/10 font-display text-lg font-semibold text-primary" aria-hidden="true">S</span>
+                    <div class="min-w-0">
+                      <div class="flex flex-wrap items-center gap-x-3 gap-y-1">
+                        <p class="font-mono text-xs text-muted"><time datetime="2023-10">Oct 2023</time> — <time datetime="2024-02">Feb 2024</time></p>
+                        <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">Internship</span>
+                      </div>
+                      <h3 class="mt-2 font-display text-xl font-semibold md:text-2xl">Individual Banking Intern</h3>
+                      <p class="text-sm text-muted">SHB · Personal Banking Department · Hanoi, Vietnam</p>
+                    </div>
+                  </div>
+                  <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted marker:text-primary md:text-base">
+                    <li>Analysed internal lending policies and consumer 
+loan files: secured/unsecured requirements, eligibility criteria, 
+documentation and lending-process steps.</li>
+                    <li>Supported a preliminary mortgage credit 
+assessment: gathered income, credit-history and debt data and calculated
+ debt-to-income (DTI) ratios.</li>
+                    <li>Evaluated credit-card eligibility and proposed 
+limits using Credit Information Centre (CIC) data, debt exposure and 
+repayment history.</li>
+                    <li>Supported retail customer engagement, assisting savings customers and communicating promotional programmes.</li>
+                  </ul>
+                  <ul class="mt-5 flex flex-wrap gap-2" aria-label="Skills used">
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Credit Assessment</li>
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">DTI Analysis</li>
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Lending Policy</li>
+                    <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Customer Engagement</li>
+                  </ul>
+                </article>
+              </div>
+            </li>
+
+            <!-- EDIT: journey.whatsNext (open node) -->
+            <li class="relative md:grid md:grid-cols-2 md:gap-16">
+              <span class="timeline-dot timeline-dot--open" data-timeline-dot="" aria-hidden="true"></span>
+              <div data-reveal="scale-in" class="pl-12 md:col-span-2 md:flex md:justify-center md:pl-0 md:pt-14">
+                <a href="#contact" class="group relative z-10 block rounded-3xl border border-dashed border-primary/60 bg-surface p-6 text-left shadow-card transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover md:px-10 md:text-center">
+                  <span class="block font-mono text-xs uppercase tracking-[0.2em] text-primary">Next step</span>
+                  <span class="mt-2 block font-display text-2xl font-semibold md:text-3xl">Open to Data &amp; Business Analyst roles <span aria-hidden="true" class="inline-block transition-transform duration-300 ease-out-quint group-hover:translate-x-1">→</span></span>
+                </a>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 04: PROJECTS ==================== -->
+    <section id="projects" aria-labelledby="projects-title" class="relative scroll-mt-24 py-24 md:py-36">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <div class="relative mb-14 md:mb-20">
+          <!-- EDIT: projects.title -->
+          <h2 id="projects-title" data-reveal="blur-in" class="relative max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">Projects</h2>
+        </div>
+
+        <!-- EDIT: projects.featured — swap the thumbnail <div class="thumb"> for
+             <img src="assets/superstore.jpg" alt="SuperStore Power BI dashboard" width="800" height="500" loading="lazy" class="aspect-[16/10] w-full rounded-2xl object-cover"> -->
+        <div data-reveal="" class="mb-6 md:mb-8">
+          <div>
+            <article class="relative grid gap-6 overflow-hidden rounded-3xl border border-line/70 bg-surface/70 p-4 shadow-card backdrop-blur-md sm:p-6 lg:grid-cols-2 lg:items-center lg:gap-10 lg:p-8">
+              <div class="thumb relative aspect-[16/10] overflow-hidden rounded-2xl" style="--h1: #6D4AFF; --h2: #E5486D;" aria-hidden="true">
+                <svg class="absolute inset-0 h-full w-full text-white/25" viewBox="0 0 400 250" preserveAspectRatio="xMidYMid slice">
+                  <defs>
+                    <pattern id="pat-grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M25 0H0V25" fill="none" stroke="currentColor"></path></pattern>
+                  </defs>
+                  <rect width="400" height="250" fill="url(#pat-grid)"></rect>
+                  <g fill="currentColor">
+                    <rect x="240" y="120" width="22" height="80" rx="3"></rect>
+                    <rect x="272" y="90" width="22" height="110" rx="3"></rect>
+                    <rect x="304" y="60" width="22" height="140" rx="3"></rect>
+                    <rect x="336" y="100" width="22" height="100" rx="3"></rect>
+                  </g>
+                </svg>
+                <span class="absolute bottom-2 left-5 font-mono text-7xl font-medium text-white/90 md:text-8xl">S</span>
+              </div>
+
+              <div class="relative">
+                <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary">Featured · <time datetime="2026-06">June 2026</time></p>
+                <h3 class="mt-2 font-display text-3xl font-semibold tracking-tight md:text-4xl">SuperStore Retail Profitability Analysis</h3>
+                <p class="mt-2 text-base leading-relaxed text-muted md:text-lg">A Power BI deep-dive into where a retailer makes and loses money.</p>
+                <!-- TODO: confirm role (e.g. "Solo analyst") — not stated in the résumé -->
+                <p class="mt-3 text-sm text-muted"><span class="font-semibold text-ink">Role:</span> [Add role, e.g. Solo analyst]</p>
+
+                <dl class="mt-5 space-y-3 border-l-2 border-primary/30 pl-4 text-sm leading-relaxed">
+                  <div><dt class="inline font-semibold text-ink">Problem.</dt> <dd class="inline text-muted">Understand profitability across products, regions, segments, discounts and shipping modes.</dd></div>
+                  <div><dt class="inline font-semibold text-ink">Approach.</dt> <dd class="inline text-muted">Analysed $2.33M in sales and $292.3K in profit with Power Query and DAX in Power BI.</dd></div>
+                  <div><dt class="inline font-semibold text-ink">Outcome.</dt> <dd class="inline text-muted">Surfaced
+ 26.3% loss-making orders, weak Furniture performance and high discount 
+levels, supporting pricing and discount-control recommendations.</dd></div>
+                </dl>
+
+                <ul class="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Power BI</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Power Query</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">DAX</li>
+                </ul>
+
+                <ul class="mt-6 flex flex-wrap gap-2">
+                  <!-- TODO(link): GitHub repository URL for SuperStore Retail Profitability Analysis -->
+                  <li><a href="https://github.com/EZ50bucks/SuperStores_Power-BI.git" aria-label="GitHub repository for SuperStore Retail Profitability Analysis" class="inline-flex h-11 items-center gap-1.5 rounded-full bg-primary px-5 text-sm font-semibold text-on-primary transition-colors duration-300 hover:bg-primary/90">GitHub <span aria-hidden="true">↗</span></a></li>
+                  <!-- TODO(link): published Power BI dashboard URL -->
+                  <li><a href="#" aria-label="Dashboard for SuperStore Retail Profitability Analysis" class="inline-flex h-11 items-center gap-1.5 rounded-full border border-line px-5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">Dashboard <span aria-hidden="true">↗</span></a></li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- More projects: one row per project (résumé-style), so any title length stays aligned -->
+        <p data-reveal="" class="mb-4 font-mono text-xs uppercase tracking-[0.2em] text-muted">More projects</p>
+        <ul data-reveal-group="" class="divide-y divide-line/70 rounded-3xl border border-line/70 bg-surface/70 shadow-card backdrop-blur-md">
+          <!-- EDIT: projects.project2 -->
+          <li data-reveal="" class="grid gap-4 p-6 md:grid-cols-[10rem_1fr] md:gap-10 md:p-8" style="--reveal-delay: 0ms;">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 md:flex-col md:items-start">
+              <p class="font-mono text-xs text-muted"><time datetime="2026">2026</time></p>
+              <p class="text-sm font-medium">Group project</p>
+              <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">In progress</span>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-display text-xl font-semibold leading-snug md:text-2xl">Electricity Demand &amp; Price Risk Analysis (AEMO &amp; BOM)</h3>
+              <p class="mt-2 max-w-prose text-sm leading-relaxed text-muted md:text-base">Scoped
+ five decision questions on demand and price risk for an electricity 
+retailer across five NEM regions, then prepared AEMO and BOM datasets 
+for analysis.</p>
+              <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <ul class="flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Orange</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Excel</li>
+                </ul>
+                <!-- TODO(link): GitHub repository URL for the electricity demand project -->
+                <a href="#" aria-label="GitHub repository for Electricity Demand and Price Risk Analysis" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">GitHub <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </li>
+          <!-- EDIT: projects.project3 -->
+          <li data-reveal="" class="grid gap-4 p-6 md:grid-cols-[10rem_1fr] md:gap-10 md:p-8" style="--reveal-delay: 90ms;">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 md:flex-col md:items-start">
+              <p class="font-mono text-xs text-muted"><time datetime="2026">2026</time></p>
+              <p class="text-sm font-medium">Group project</p>
+              <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">In progress</span>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-display text-xl font-semibold leading-snug md:text-2xl">Digital Care Information System</h3>
+              <p class="mt-2 max-w-prose text-sm leading-relaxed text-muted md:text-base">Turned
+ form requirements into an ontology-based information model for a 
+dementia information system, and validated the flow between web forms, 
+ontology and RDF data.</p>
+              <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <ul class="flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Protégé</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">RDF/TTL</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">SPARQL</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Apache Jena Fuseki</li>
+                </ul>
+                <!-- TODO(link): GitHub repository URL for the Digital Care Information System -->
+                <a href="#" aria-label="GitHub repository for Digital Care Information System" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">GitHub <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </li>
+          <!-- EDIT: projects.project4 -->
+          <li data-reveal="" class="grid gap-4 p-6 md:grid-cols-[10rem_1fr] md:gap-10 md:p-8" style="--reveal-delay: 180ms;">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 md:flex-col md:items-start">
+              <p class="font-mono text-xs text-muted"><time datetime="2024-02">Feb</time> — <time datetime="2024-07">Jul 2024</time></p>
+              <p class="text-sm font-medium">Dissertation</p>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-display text-xl font-semibold leading-snug md:text-2xl">Factors Affecting Individual Customers' Deposit Decisions at SHB</h3>
+              <p class="mt-2 max-w-prose text-sm leading-relaxed text-muted md:text-base">Quantitative
+ study of 200 customer responses using Cronbach's Alpha, EFA, Pearson 
+correlation and multiple linear regression. Identified marketing, 
+deposit interest rates and brand reputation as key drivers, with 
+recommendations for SHB.</p>
+              <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <ul class="flex flex-wrap gap-2" aria-label="Technologies">
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">SPSS</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Excel</li>
+                </ul>
+                <!-- TODO(link): dissertation summary URL or PDF -->
+                <a href="#" aria-label="Read summary of the deposit decisions dissertation" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">Read summary</a>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ==================== 05: EDUCATION & ACHIEVEMENTS ==================== -->
+    <section id="milestones" aria-labelledby="milestones-title" class="relative scroll-mt-24 py-24 md:py-36">
+      <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+
+        <div class="relative mb-14 md:mb-20">
+          <!-- EDIT: milestones.title -->
+          <h2 id="milestones-title" data-reveal="blur-in" class="relative max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">Education &amp; Achievements</h2>
+        </div>
+
+        <!-- Bento grid: [UOW 4 + highlight 2] [Greenwich 6] [3 awards] [certifications 6] -->
+        <div data-reveal-group="" class="grid gap-4 md:grid-cols-6 md:gap-6">
+
+          <!-- EDIT: milestones.education1 -->
+          <div data-reveal="" class="md:col-span-4" style="--reveal-delay: 0ms;">
+            <article class="h-full rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md md:p-8">
+              <div class="flex items-start gap-4">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="font-mono text-xs uppercase tracking-[0.2em] text-muted">Education</p>
+                  <h3 class="mt-1 font-display text-2xl font-semibold md:text-3xl">University of Wollongong</h3>
+                  <p class="mt-1 text-muted">Master of Information Technology · Majors: Enterprise Systems; Information Design and Analysis</p>
+                </div>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
+                <p><span class="text-muted">Dates</span> <time datetime="2025-02">Feb 2025</time> — Present</p>
+                <p><span class="text-muted">Expected</span> <time datetime="2026-12">Dec 2026</time></p>
+                <p><span class="text-muted">WAM</span> 83.9 / 100</p>
+              </div>
+              <p class="mt-6 text-sm font-semibold">Key coursework</p>
+              <ul class="mt-3 flex flex-wrap gap-2">
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm">Enterprise Architecture Design &amp; Systems Integration</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm">Data Management Systems</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm">System Analysis &amp; Project Management</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm">Business Process Management</li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- EDIT: milestones.highlight -->
+          <div data-reveal="scale-in" class="md:col-span-2" style="--reveal-delay: 90ms;">
+            <article class="flex h-full flex-col justify-between rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md md:p-8">
+              <p class="font-mono text-xs uppercase tracking-[0.2em] text-muted">Highlight</p>
+              <div class="mt-6">
+                <p class="gradient-text font-display text-6xl font-semibold leading-none tracking-tight" aria-hidden="true">3.89</p>
+                <h3 class="mt-3 font-display text-2xl font-semibold">Graduation Valedictorian</h3>
+                <p class="mt-1 font-mono text-sm text-muted">DDP <time datetime="2024">2024</time> · GPA 3.89 / 4.0</p>
+              </div>
+            </article>
+          </div>
+
+          <!-- EDIT: milestones.education2 -->
+          <div data-reveal="" class="md:col-span-6" style="--reveal-delay: 180ms;">
+            <article class="h-full rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md md:p-8">
+              <div class="flex items-start gap-4">
+                <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                  <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0z"></path><path d="M22 10v6"></path><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"></path></svg>
+                </span>
+                <div class="min-w-0">
+                  <p class="font-mono text-xs uppercase tracking-[0.2em] text-muted">Education</p>
+                  <h3 class="mt-1 font-display text-2xl font-semibold md:text-3xl">Academy of Finance &amp; University of Greenwich</h3>
+                  <p class="mt-1 text-muted">Dual Degree Programme · Finance, Banking &amp; Accounting</p>
+                </div>
+              </div>
+              <div class="mt-5 flex flex-wrap gap-x-6 gap-y-2 font-mono text-sm">
+                <p><span class="text-muted">Dates</span> <time datetime="2020-09">Sep 2020</time> — <time datetime="2024-09">Sep 2024</time></p>
+                <p><span class="text-muted">Location</span> Hanoi, Vietnam</p>
+              </div>
+              <ul class="mt-6 grid gap-3 md:grid-cols-2">
+                <li class="rounded-2xl border border-line bg-bg/60 p-4">
+                  <p class="font-semibold">Bachelor's in Finance and Banking</p>
+                  <p class="mt-1 text-sm text-muted">Academy of Finance · Excellent</p>
+                </li>
+                <li class="rounded-2xl border border-line bg-bg/60 p-4">
+                  <p class="font-semibold">BA (Hons) Accounting and Finance</p>
+                  <p class="mt-1 text-sm text-muted">University of Greenwich · First Class Honours</p>
+                </li>
+              </ul>
+            </article>
+          </div>
+
+          <!-- EDIT: milestones.award1 -->
+          <div data-reveal="" class="md:col-span-2" style="--reveal-delay: 270ms;">
+            <article class="h-full rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              </span>
+              <h3 class="mt-5 font-display text-xl font-semibold">Postgraduate Academic Excellence Scholarship (30%)</h3>
+              <!-- TODO: add the year this scholarship was awarded -->
+              <p class="mt-1 font-mono text-xs text-muted">University of Wollongong · [Add year]</p>
+            </article>
+          </div>
+
+          <!-- EDIT: milestones.award2 -->
+          <div data-reveal="" class="md:col-span-2" style="--reveal-delay: 360ms;">
+            <article class="h-full rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M7.21 15 2.66 7.14a2 2 0 0 1 .13-2.2L4.4 2.8A2 2 0 0 1 6 2h12a2 2 0 0 1 1.6.8l1.6 2.14a2 2 0 0 1 .14 2.2L16.79 15"></path><path d="M11 12 5.12 2.2"></path><path d="m13 12 5.88-9.8"></path><path d="M8 7h8"></path><circle cx="12" cy="17" r="5"></circle></svg>
+              </span>
+              <h3 class="mt-5 font-display text-xl font-semibold">DDP Honours Scholarship</h3>
+              <p class="mt-1 font-mono text-xs text-muted">Second Class Award · <time datetime="2021">2021</time> — <time datetime="2023">2023</time></p>
+            </article>
+          </div>
+
+          <!-- EDIT: milestones.award3 -->
+          <div data-reveal="" class="md:col-span-2" style="--reveal-delay: 450ms;">
+            <article class="h-full rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md">
+              <span class="grid h-12 w-12 place-items-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>
+              </span>
+              <h3 class="mt-5 font-display text-xl font-semibold">First Class Honours</h3>
+              <p class="mt-1 font-mono text-xs text-muted">BA (Hons) Accounting and Finance · University of Greenwich · <time datetime="2024">2024</time></p>
+            </article>
+          </div>
+
+          <!-- EDIT: milestones.certifications -->
+          <div data-reveal="" class="md:col-span-6" style="--reveal-delay: 540ms;">
+            <article class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md md:p-8">
+              <h3 class="font-display text-2xl font-semibold">Certifications</h3>
+              <ul class="mt-4 divide-y divide-line">
+                <li class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
+                  <!-- TODO: add the year earned -->
+                  <p class="min-w-0"><span class="font-semibold">Microsoft Power BI Data Analyst</span> <span class="font-mono text-xs text-muted">· Datapot Academy (Microsoft Partner) · [Add year]</span></p>
+                  <!-- TODO(link): verification URL for the Power BI Data Analyst certificate -->
+                  <a href="#" aria-label="Verify Microsoft Power BI Data Analyst" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Verify <span aria-hidden="true">↗</span></a>
+                </li>
+                <li class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
+                  <!-- TODO: add the year earned -->
+                  <p class="min-w-0"><span class="font-semibold">SQL and Python Foundations in Data Analytics</span> <span class="font-mono text-xs text-muted">· MCI Technology Academy · [Add year]</span></p>
+                  <!-- TODO(link): verification URL for the SQL and Python certificate -->
+                  <a href="#" aria-label="Verify SQL and Python Foundations in Data Analytics" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Verify <span aria-hidden="true">↗</span></a>
+                </li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== 06: CONTACT ==================== -->
+    <section id="contact" aria-labelledby="contact-title" class="relative scroll-mt-24 py-24 md:py-36">
+      <div class="mx-auto max-w-6xl px-4 text-center sm:px-6 lg:px-8">
+
+        <div class="relative">
+          <!-- EDIT: contact.title -->
+          <h2 id="contact-title" data-reveal="blur-in" class="relative mx-auto max-w-4xl font-display text-5xl font-semibold leading-[1.02] tracking-tight md:text-7xl">Get in touch</h2>
+        </div>
+
+        <!-- EDIT: contact.availability -->
+        <div data-reveal="" data-delay="200" class="mt-8 flex justify-center" style="--reveal-delay: 200ms;">
+          <p class="inline-flex items-center gap-3 rounded-full border border-line/70 bg-surface/70 px-4 py-2 text-sm font-medium shadow-card backdrop-blur-md">
+            <span class="relative flex h-2.5 w-2.5" aria-hidden="true">
+              <span class="absolute inset-0 animate-pulse-ring rounded-full bg-teal"></span>
+              <span class="relative h-2.5 w-2.5 rounded-full bg-teal"></span>
+            </span>
+            Open to Data &amp; Business Analyst roles
+          </p>
+        </div>
+
+        <!-- EDIT: contact.intro -->
+        <p data-reveal="" class="mx-auto mt-8 max-w-prose text-base leading-relaxed text-muted md:text-lg">
+          I'm seeking an entry-level Data Analyst, Business Analyst or 
+analytical role that combines business, data and technology. If you have
+ an opportunity in mind, I'd love to hear from you.
+        </p>
+
+        <!-- EDIT: contact.email — change the address in all three places below (mailto, data-value, visible text) -->
+        <!-- OPTIONAL: phone +61 … could go here — omitted for privacy -->
+        <div data-reveal="" class="mt-10 flex flex-col items-center gap-4">
+          <div class="flex flex-wrap justify-center gap-3">
+            <a href="mailto:vananhdinh.vanni@gmail.com" class="inline-flex h-12 items-center gap-2 rounded-full bg-primary px-6 font-semibold text-on-primary shadow-card transition duration-300 ease-out-quint hover:bg-primary/90 hover:shadow-card-hover">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+              Email me
+            </a>
+            <button type="button" data-copy="email" data-value="vananhdinh.vanni@gmail.com" class="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/60 px-6 font-semibold transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+              <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="14" height="14" x="8" y="8" rx="2"></rect><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"></path></svg>
+              Copy email
+            </button>
+          </div>
+          <p class="break-all font-mono text-sm text-muted">vananhdinh.vanni@gmail.com</p>
+        </div>
+
+        <!-- Social cards. EDIT: contact.socials -->
+        <ul data-reveal-group="" class="mt-14 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+          <li data-reveal="" style="--reveal-delay: 0ms;">
+            <a href="https://www.linkedin.com/in/vannidinh" target="_blank" rel="noopener" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-on-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block font-semibold">LinkedIn <span aria-hidden="true" class="inline-block text-primary transition-transform duration-300 ease-out-quint group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span><span class="sr-only"> (opens in a new tab)</span></span>
+                <span class="block truncate text-sm text-muted">in/vannidinh</span>
+              </span>
+            </a>
+          </li>
+          <li data-reveal="" style="--reveal-delay: 90ms;">
+            <a href="https://github.com/sntung" target="_blank" rel="noopener" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-on-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block font-semibold">GitHub <span aria-hidden="true" class="inline-block text-primary transition-transform duration-300 ease-out-quint group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span><span class="sr-only"> (opens in a new tab)</span></span>
+                <span class="block truncate text-sm text-muted">@sntung</span>
+              </span>
+            </a>
+          </li>
+          <li data-reveal="" style="--reveal-delay: 180ms;">
+            <a href="https://public-hosting-vietdungtran.s3.ap-east-1.amazonaws.com/assets/resume.pdf" target="_blank" rel="noopener" data-resume-open="" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-on-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8M16 17H8M10 9H8"></path></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block font-semibold">Résumé <span aria-hidden="true" class="inline-block text-primary transition-transform duration-300 ease-out-quint group-hover:-translate-y-0.5 group-hover:translate-x-0.5">↗</span></span>
+                <span class="block truncate text-sm text-muted">View or download · PDF</span>
+              </span>
+            </a>
+          </li>
+          <li data-reveal="" style="--reveal-delay: 270ms;">
+            <div class="flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md">
+              <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary" aria-hidden="true">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              </span>
+              <span class="min-w-0">
+                <span class="block font-semibold">Location</span>
+                <span class="block truncate text-sm text-muted">Wollongong, NSW</span>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="relative border-t border-line/70 py-14">
+    <div class="mx-auto flex max-w-6xl flex-col items-center gap-6 px-4 text-center sm:px-6 md:flex-row md:justify-between md:text-left lg:px-8">
+      <p class="font-display text-2xl font-semibold">Vanni Dinh <span class="block font-sans text-sm font-normal text-muted md:inline md:pl-2">Data &amp; Business Analyst</span></p>
+      <!-- EDIT: footer.name -->
+      <p class="text-sm text-muted">© <span data-year="">2026</span> Vanni Dinh. All rights reserved.</p>
+      <a href="#hello" class="inline-flex h-11 items-center gap-2 rounded-full border border-line px-5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">
+        Back to top <span aria-hidden="true">↑</span>
+      </a>
+    </div>
+  </footer>
+
+  <!-- Toast (announced politely to screen readers) -->
+  <div class="toast fixed bottom-6 left-1/2 z-[80] rounded-full bg-ink px-5 py-3 text-sm font-semibold text-bg shadow-card" role="status" aria-live="polite" data-toast=""></div>
+
+  <!-- ==================== RÉSUMÉ VIEWER ==================== -->
+  <!-- Opened by any [data-resume-open] link. Browsers without a built-in PDF viewer
+       (e.g. Android Chrome) skip this and open the PDF directly. EDIT: résumé file = assets/resume.pdf -->
+  <dialog data-resume-dialog="" aria-labelledby="resume-dialog-title" class="resume-dialog m-auto w-[min(60rem,calc(100vw-2rem))] max-w-none overflow-hidden rounded-3xl border border-line/70 bg-surface p-0 text-ink shadow-card-hover">
+    <div class="flex items-center justify-between gap-3 border-b border-line/70 py-3 pl-5 pr-3 sm:pl-6">
+      <h2 id="resume-dialog-title" class="truncate font-display text-lg font-semibold sm:text-xl">Résumé · Vanni Dinh</h2>
+      <div class="flex shrink-0 items-center gap-2">
+        <a href="./assets/resume.pdf" download="Vanni-Dinh-Resume.pdf" class="inline-flex h-10 items-center gap-2 rounded-full bg-primary px-4 text-sm font-semibold text-on-primary transition-colors duration-300 hover:bg-primary/90">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>
+          Download
+        </a>
+        <a href="./assets/resume.pdf" target="_blank" rel="noopener" class="hidden h-10 items-center gap-1.5 rounded-full border border-line px-4 text-sm font-semibold transition-colors hover:border-primary hover:text-primary sm:inline-flex">
+          Open in new tab <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
+        </a>
+        <button type="button" data-resume-close="" aria-label="Close résumé" class="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors hover:bg-line/60 hover:text-ink">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"></path></svg>
+        </button>
+      </div>
+    </div>
+    <!-- src is set on first open so the PDF isn't downloaded with the page -->
+    <iframe data-resume-frame="" title="Résumé of Vanni Dinh (PDF)" class="block h-[min(80vh,64rem)] w-full bg-bg"></iframe>
+  </dialog>
+
+  <!-- ==================== SCRIPT ==================== -->
+  <script>
+    (() => {
+      'use strict';
+
+      // ------------------------------------------------------------
+      // EDIT: typed hero roles (they rotate on the "I'm …" line).
+      // The summary paragraph is static HTML (see EDIT: hello.summary).
+      // ------------------------------------------------------------
+      const CONTENT = {
+        roles: [
+          'a Data Analyst',
+          'a Business Analyst',
+          'a Power BI Dashboard Builder',
+          'a Master of IT Student'
+        ]
+      };
+
+      // ---------- Shared helpers ----------
+      const root = document.documentElement;
+      const RM = matchMedia('(prefers-reduced-motion: reduce)');
+      const $ = (sel, scope = document) => scope.querySelector(sel);
+      const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
+      const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
+      const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
+
+      /** Mirror prefers-reduced-motion onto <html class="reduce-motion">. */
+      function syncReducedMotion() {
+        root.classList.toggle('reduce-motion', RM.matches);
+      }
+
+      /** Theme toggle: saved choice in localStorage, otherwise follow the system. */
+      function initTheme() {
+        const buttons = $$('[data-theme-toggle]');
+        const system = matchMedia('(prefers-color-scheme: dark)');
+
+        const apply = (dark, persist) => {
+          root.classList.toggle('dark', dark);
+          buttons.forEach((btn) => {
+            btn.setAttribute('aria-pressed', String(dark));
+            btn.title = dark ? 'Switch to light theme' : 'Switch to dark theme';
+          });
+          if (persist) {
+            try { localStorage.setItem('theme', dark ? 'dark' : 'light'); } catch (e) { /* storage blocked */ }
+          }
+        };
+
+        apply(root.classList.contains('light'), false);
+        buttons.forEach((btn) => btn.addEventListener('click', () => apply(!root.classList.contains('dark'), true)));
+
+        system.addEventListener('change', (e) => {
+          let saved = null;
+          try { saved = localStorage.getItem('theme'); } catch (err) { /* ignore */ }
+          if (!saved) apply(e.matches, false);
+        });
+      }
+
+      /** Mobile menu: toggle, close on Esc / link click / outside click, return focus. */
+      function initMobileNav() {
+        const button = $('[data-menu-toggle]');
+        if (!button) return;
+        const panel = document.getElementById(button.getAttribute('aria-controls'));
+        if (!panel) return;
+
+        const setOpen = (open, returnFocus) => {
+          button.setAttribute('aria-expanded', String(open));
+          panel.classList.toggle('is-open', open);
+          if (open) {
+            const firstLink = $('a', panel);
+            if (firstLink) firstLink.focus();
+          } else if (returnFocus) {
+            button.focus();
+          }
+        };
+        const isOpen = () => button.getAttribute('aria-expanded') === 'true';
+
+        button.addEventListener('click', () => setOpen(!isOpen(), true));
+        $$('a', panel).forEach((link) => link.addEventListener('click', () => setOpen(false, false)));
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && isOpen()) setOpen(false, true);
+        });
+        document.addEventListener('click', (e) => {
+          if (isOpen() && !panel.contains(e.target) && !button.contains(e.target)) setOpen(false, false);
+        });
+        matchMedia('(min-width: 768px)').addEventListener('change', (e) => {
+          if (e.matches && isOpen()) setOpen(false, false);
+        });
+      }
+
+      /** Split the hero <h1> into word spans so each word can blur in. */
+      function splitWords(el) {
+        const nodes = [...el.childNodes];
+        el.textContent = '';
+        let index = 0;
+        let previous = null;
+
+        nodes.forEach((node) => {
+          const extraClass = node.nodeType === 1 ? node.className : '';
+          node.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { el.append(' '); previous = null; return; }
+            // Punctuation glued to the previous word stays with it (no orphaned ".")
+            if (previous && !/\w/.test(part)) { previous.textContent += part; return; }
+            const span = document.createElement('span');
+            span.className = extraClass ? 'hero-word ' + extraClass : 'hero-word';
+            span.textContent = part;
+            span.style.setProperty('--reveal-delay', (300 + index * 80) + 'ms');
+            el.append(span);
+            previous = span;
+            index += 1;
+          });
+        });
+        el.classList.add('is-split');
+      }
+
+      /** Hero entrance on load (no observer): avatar, eyebrow, words, summary, then CTAs. */
+      function initHeroIntro() {
+        const hero = $('[data-hero]');
+        if (!hero) return;
+        const title = $('[data-split]', hero);
+        if (title) splitWords(title);
+
+        const items = $$('[data-reveal]', hero);
+        items.forEach((el) => el.style.setProperty('--reveal-delay', (el.dataset.delay || 0) + 'ms'));
+
+        const now = [...items.filter((el) => !el.hasAttribute('data-hero-late')), ...$$('.hero-word', hero)];
+        const late = items.filter((el) => el.hasAttribute('data-hero-late'));
+
+        // Two frames so the hidden state paints before the transition starts
+        requestAnimationFrame(() => requestAnimationFrame(() => {
+          now.forEach((el) => el.classList.add('is-visible'));
+        }));
+        // CTAs, socials and scroll cue follow shortly after the summary fades up
+        setTimeout(() => late.forEach((el) => el.classList.add('is-visible')), RM.matches ? 0 : 1100);
+      }
+
+      /** Typewriter: rotating roles on the "I'm …" line (loops forever). */
+      function initTypewriter() {
+        const roleEl = $('[data-typed="roles"]');
+        const caret = $('[data-caret]');
+        if (!roleEl || !caret) return;
+
+        const { roles } = CONTENT;
+
+        // Keep the screen-reader text in sync with CONTENT
+        let roleList = roles.join(', ');
+        try { roleList = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' }).format(roles); } catch (e) { /* older browser */ }
+        $$('[data-typed-sr="roles"]').forEach((el) => { el.textContent = "I'm " + roleList + '.'; });
+
+        let stopped = false;
+        const showStatic = () => {
+          stopped = true;
+          roleEl.textContent = roles[0];
+          caret.hidden = true;
+        };
+        if (RM.matches) { showStatic(); return; }
+        RM.addEventListener('change', (e) => { if (e.matches) showStatic(); });
+
+        // Pause while the hero is offscreen or the tab is hidden
+        let heroVisible = true;
+        const hero = $('[data-hero]');
+        if (hero && 'IntersectionObserver' in window) {
+          new IntersectionObserver(([entry]) => { heroVisible = entry.isIntersecting; }).observe(hero);
+        }
+        const whenActive = async () => {
+          while (!stopped && (!heroVisible || document.hidden)) await sleep(250);
+        };
+
+        const typeText = async (text) => {
+          caret.classList.add('is-typing');
+          for (const ch of text) {
+            if (stopped) return;
+            await whenActive();
+            roleEl.textContent += ch;
+            await sleep(65 + (Math.random() * 2 - 1) * 25);
+          }
+          caret.classList.remove('is-typing');
+        };
+
+        const eraseText = async () => {
+          caret.classList.add('is-typing');
+          while (roleEl.textContent.length) {
+            if (stopped) return;
+            await whenActive();
+            roleEl.textContent = roleEl.textContent.slice(0, -1);
+            await sleep(32);
+          }
+          caret.classList.remove('is-typing');
+        };
+
+        roleEl.textContent = '';
+
+        (async () => {
+          await sleep(900);
+          let i = 0;
+          while (!stopped) {
+            await typeText(roles[i]);
+            await sleep(1600);
+            await eraseText();
+            await sleep(350);
+            i = (i + 1) % roles.length;
+          }
+        })();
+      }
+
+      /** Count a [data-count] number up from 0 (easeOutExpo, 1400ms). */
+      function countUp(el) {
+        const end = parseFloat(el.dataset.count);
+        const decimals = parseInt(el.dataset.decimals || '0', 10);
+        const suffix = el.dataset.suffix || '';
+        const fmt = new Intl.NumberFormat(root.lang || 'en', {
+          minimumFractionDigits: decimals,
+          maximumFractionDigits: decimals
+        });
+        const render = (value) => { el.textContent = fmt.format(value) + suffix; };
+
+        if (RM.matches || Number.isNaN(end)) { if (!Number.isNaN(end)) render(end); return; }
+
+        const host = el.closest('[data-reveal]');
+        const delay = host ? parseFloat(getComputedStyle(host).getPropertyValue('--reveal-delay')) || 0 : 0;
+        render(0);
+        setTimeout(() => {
+          const start = performance.now();
+          const step = (now) => {
+            const t = clamp((now - start) / 1400, 0, 1);
+            const eased = t === 1 ? 1 : 1 - Math.pow(2, -10 * t);
+            render(end * eased);
+            if (t < 1) requestAnimationFrame(step);
+          };
+          requestAnimationFrame(step);
+        }, delay);
+      }
+
+      /** Start count-ups inside an element that just revealed. */
+      function initCountUp(scope) {
+        const targets = scope.matches('[data-count]') ? [scope] : $$('[data-count]', scope);
+        targets.forEach(countUp);
+      }
+
+      /** Scroll reveals: one IntersectionObserver, staggered groups, reveal once. */
+      function initReveal() {
+        // Stagger children of [data-reveal-group] (90ms each, capped at 8)
+        $$('[data-reveal-group]').forEach((group) => {
+          $$(':scope > [data-reveal]', group).forEach((child, i) => {
+            child.style.setProperty('--reveal-delay', Math.min(i, 8) * 90 + 'ms');
+          });
+        });
+        // Explicit data-delay always wins
+        $$('[data-reveal][data-delay]').forEach((el) => {
+          el.style.setProperty('--reveal-delay', el.dataset.delay + 'ms');
+        });
+
+        const items = $$('[data-reveal]').filter((el) => !el.closest('[data-hero]'));
+        const reveal = (el) => {
+          el.classList.add('is-visible');
+          initCountUp(el);
+        };
+
+        if (!('IntersectionObserver' in window)) { items.forEach(reveal); return; }
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            reveal(entry.target);
+            io.unobserve(entry.target);
+          });
+        }, { threshold: 0, rootMargin: '0px 0px -12% 0px' });
+
+        items.forEach((el) => io.observe(el));
+      }
+
+      /** One rAF-throttled scroll loop: progress bar + timeline fill and dots. */
+      function initScrollLoop() {
+        const bar = $('[data-progress]');
+        const timeline = $('[data-timeline]');
+        const fill = $('[data-timeline-fill]');
+        const dots = $$('[data-timeline-dot]');
+        let ticking = false;
+
+        const update = () => {
+          ticking = false;
+          const vh = window.innerHeight;
+          const max = root.scrollHeight - vh;
+          if (bar) bar.style.setProperty('--progress', max > 0 ? clamp(window.scrollY / max, 0, 1) : 0);
+
+          if (timeline && fill) {
+            const rect = timeline.getBoundingClientRect();
+            const p = RM.matches ? 1 : clamp((vh * 0.6 - rect.top) / rect.height, 0, 1);
+            fill.style.setProperty('--progress', p.toFixed(4));
+            dots.forEach((dot) => {
+              const d = dot.getBoundingClientRect();
+              dot.classList.toggle('is-passed', RM.matches || d.top + d.height / 2 <= vh * 0.6);
+            });
+          }
+        };
+
+        const requestUpdate = () => {
+          if (ticking) return;
+          ticking = true;
+          requestAnimationFrame(update);
+        };
+
+        window.addEventListener('scroll', requestUpdate, { passive: true });
+        window.addEventListener('resize', requestUpdate, { passive: true });
+        RM.addEventListener('change', requestUpdate);
+        update();
+      }
+
+      /** Scroll spy: highlight the current chapter in the nav and the rail. */
+      function initScrollSpy() {
+        const links = $$('[data-nav-link], [data-rail-link]');
+        const sections = $$('main section[id]');
+        if (!links.length || !sections.length || !('IntersectionObserver' in window)) return;
+
+        const setActive = (id) => {
+          links.forEach((link) => {
+            const on = link.getAttribute('href') === '#' + id;
+            link.classList.toggle('is-active', on);
+            if (on) link.setAttribute('aria-current', 'true');
+            else link.removeAttribute('aria-current');
+          });
+        };
+
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => { if (entry.isIntersecting) setActive(entry.target.id); });
+        }, { rootMargin: '-45% 0px -50% 0px' });
+
+        sections.forEach((section) => io.observe(section));
+      }
+
+      /** Copy-email button: clipboard API with a legacy fallback, then a toast. */
+      function initCopyEmail() {
+        const toast = $('[data-toast]');
+        let hideTimer = null;
+
+        const showToast = (message) => {
+          if (!toast) return;
+          toast.textContent = '';
+          // Clear first so repeating the same message is announced again
+          setTimeout(() => {
+            toast.textContent = message;
+            toast.classList.add('is-open');
+            clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => toast.classList.remove('is-open'), 2400);
+          }, 50);
+        };
+
+        const legacyCopy = (text) => {
+          const area = document.createElement('textarea');
+          area.value = text;
+          area.setAttribute('readonly', '');
+          area.style.position = 'fixed';
+          area.style.opacity = '0';
+          document.body.append(area);
+          area.select();
+          let ok = false;
+          try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+          area.remove();
+          return ok;
+        };
+
+        $$('[data-copy="email"]').forEach((btn) => {
+          btn.addEventListener('click', async () => {
+            const email = btn.dataset.value || '';
+            let ok = false;
+            try {
+              await navigator.clipboard.writeText(email);
+              ok = true;
+            } catch (e) {
+              ok = legacyCopy(email);
+            }
+            showToast(ok ? 'Email copied ✓' : 'Copy failed. My email is ' + email);
+          });
+        });
+      }
+
+      /** Résumé links open the PDF in a modal with Download / Open in new tab. */
+      function initResumeViewer() {
+        const dialog = $('[data-resume-dialog]');
+        const frame = $('[data-resume-frame]');
+        // No built-in PDF viewer (e.g. Android Chrome): keep the plain link behaviour.
+        if (!dialog || typeof dialog.showModal !== 'function' || navigator.pdfViewerEnabled === false) return;
+
+        $$('[data-resume-open]').forEach((link) => {
+          link.addEventListener('click', (e) => {
+            if (e.metaKey || e.ctrlKey || e.shiftKey || e.button !== 0) return; // let "open in new tab" through
+            e.preventDefault();
+            if (!frame.getAttribute('src')) frame.src = link.getAttribute('href') + '#view=FitH';
+            dialog.showModal();
+          });
+        });
+
+        $('[data-resume-close]', dialog).addEventListener('click', () => dialog.close());
+        // A click on the dialog element itself (not its content) means the backdrop was clicked.
+        dialog.addEventListener('click', (e) => { if (e.target === dialog) dialog.close(); });
+      }
+
+      /** Footer © year. */
+      function initYear() {
+        $$('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
+      }
+
+      // ---------- Boot ----------
+      syncReducedMotion();
+      RM.addEventListener('change', syncReducedMotion);
+
+      initTheme();
+      initMobileNav();
+      initTypewriter();
+      initHeroIntro();
+      initReveal();
+      initScrollLoop();
+      initScrollSpy();
+      initCopyEmail();
+      initResumeViewer();
+      initYear();
+    })();
+  </script>
+
+
+</body></html>
