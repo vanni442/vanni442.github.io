@@ -646,7 +646,7 @@ banking experience at SHB. I turn data into <span class="highlight">dashboards a
               </li>
               <li data-reveal="scale-in" style="--reveal-delay: 180ms;">
                 <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
-                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="3" data-decimals="0">5</span></p>
+                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span id="project-count" data-count="5" data-decimals="0">5</span></p>
                   <p class="mt-2 text-sm text-muted">Analytics projects</p>
                 </div>
               </li>
@@ -1267,6 +1267,14 @@ analytical role that combines business, data and technology. If you have
       const RM = matchMedia('(prefers-reduced-motion: reduce)');
       const $ = (sel, scope = document) => scope.querySelector(sel);
       const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
+      // Keep the statistic aligned with the projects displayed on the page.
+      const projectCounter = document.getElementById('project-count');
+      if (projectCounter) {
+        const totalProjects = document.querySelectorAll('#projects h3').length;
+        projectCounter.dataset.count = String(totalProjects);
+        projectCounter.textContent = String(totalProjects);
+      }
+
       const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
       const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
 
