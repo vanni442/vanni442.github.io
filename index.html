@@ -6,7 +6,7 @@
 
   <!-- EDIT: meta.title / meta.description -->
   <title>Vanni Dinh | Data &amp; Business Analyst Portfolio</title>
-  <meta name="description" content="I'm Vanni Dinh, a Master of IT student at the University of Wollongong building Power BI, SQL and Tableau analyses. Explore my experience, projects and milestones.">
+  <meta name="description" content="I'm Vanni Dinh, a Master of IT student at the University of Wollongong building BPMN process models and Power BI analyses. Explore my experience, projects and milestones.">
 
   <!-- EDIT: meta.themeColor (browser UI colour, light and dark) -->
   <meta name="theme-color" content="#FAF8F5" media="(prefers-color-scheme: light)">
@@ -36,7 +36,7 @@
   </script>
 
   <!-- Tailwind CSS v3 Play CDN + config (tokens map to CSS variables below) -->
-  <script src="portfolio_files/3.4.17"></script>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
   <script>
     tailwind.config = {
       darkMode: 'class',
@@ -85,7 +85,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
-  <link href="portfolio_files/css2.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,400;0,600;1,400;1,600&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
 
   <!--
     Custom CSS: tokens, reveal states, aurora/grain, caret, timeline and a few
@@ -864,6 +864,32 @@ levels, supporting pricing and discount-control recommendations.</dd></div>
         </div>
 
         <!-- More projects: one row per project (résumé-style), so any title length stays aligned -->
+        <ul class="divide-y divide-line/70 overflow-hidden rounded-3xl border border-line/70 bg-surface/40">
+          <li data-reveal="" class="grid gap-4 p-6 md:grid-cols-[10rem_1fr] md:gap-10 md:p-8">
+            <div class="flex flex-wrap items-center gap-x-3 gap-y-2 md:flex-col md:items-start">
+              <p class="font-mono text-xs text-muted"><time datetime="2025">2025</time></p>
+              <p class="text-sm font-medium">Academic projects</p>
+            </div>
+            <div class="min-w-0">
+              <h3 class="font-display text-xl font-semibold leading-snug md:text-2xl">Business Process Analysis and Improvement</h3>
+              <p class="mt-2 max-w-prose text-sm leading-relaxed text-muted md:text-base">Two Business Process Management case studies completed at UOW, covering process mapping, business rules, improvement recommendations and implementation planning.</p>
+              <dl class="mt-4 space-y-3 text-sm leading-relaxed md:text-base">
+                <div><dt class="font-semibold text-ink">Individual project: library overdue book handling</dt><dd class="text-muted">Developed a BPMN model across 6 participants, documenting responsibilities, payment exceptions, 7-day follow-ups and 60-day closure rules.</dd></div>
+                <div><dt class="font-semibold text-ink">Group project: Uber Eats process improvement</dt><dd class="text-muted">Prepared a 3-phase implementation and control plan, translating process analysis into performance measures and risk mitigations for proposed dispatch and exception-handling improvements. Supported analysis and report preparation; process diagrams and redesign were group deliverables.</dd></div>
+              </dl>
+              <p class="mt-3 text-sm text-muted">Academic case studies; proposed changes were not implemented in a live organisation.</p>
+              <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
+                <ul class="flex flex-wrap gap-2" aria-label="Methods and tools">
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">BPMN</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Process Mapping</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Business Rules</li>
+                  <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Implementation Planning</li>
+                </ul>
+                <a href="https://github.com/vanni442/Business-Process-Analysis-and-Improvement" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Business Process Analysis and Improvement" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">GitHub <span aria-hidden="true">↗</span></a>
+              </div>
+            </div>
+          </li>
+
           <!-- EDIT: projects.project3 -->
           <li data-reveal="" class="grid gap-4 p-6 md:grid-cols-[10rem_1fr] md:gap-10 md:p-8" style="--reveal-delay: 90ms;">
             <div class="flex flex-wrap items-center gap-x-3 gap-y-2 md:flex-col md:items-start">
