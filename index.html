@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-AU" class="dark js"><head>
+<html lang="en-AU"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,7 +16,8 @@
   <meta property="og:type" content="website">
   <meta property="og:title" content="Vanni Dinh | Data &amp; Business Analyst Portfolio">
   <meta property="og:description" content="Master of IT student in Wollongong, NSW, building business data analyses and Power BI dashboards. Experience, projects and milestones.">
-  <!-- TODO(link): add the live site URL once published, e.g. <meta property="og:url" content="https://your-domain/"> -->
+  <link rel="canonical" href="https://vanni442.github.io/">
+  <meta property="og:url" content="https://vanni442.github.io/">
   <meta name="twitter:card" content="summary">
 
   <!-- Favicon: inline SVG monogram (no external image) -->
@@ -28,60 +29,14 @@
       const d = document.documentElement;
       try {
         const t = localStorage.getItem('theme');
-        if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) d.classList.add('dark');
+        d.classList.toggle('dark', t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches));
       } catch (e) {}
       if (matchMedia('(prefers-reduced-motion: reduce)').matches) d.classList.add('reduce-motion');
       d.classList.add('js');
     })();
   </script>
 
-  <!-- Tailwind CSS v3 Play CDN + config (tokens map to CSS variables below) -->
-  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          colors: {
-            bg: 'rgb(var(--bg) / <alpha-value>)',
-            surface: 'rgb(var(--surface) / <alpha-value>)',
-            ink: 'rgb(var(--ink) / <alpha-value>)',
-            muted: 'rgb(var(--muted) / <alpha-value>)',
-            line: 'rgb(var(--line) / <alpha-value>)',
-            primary: 'rgb(var(--primary) / <alpha-value>)',
-            'on-primary': 'rgb(var(--on-primary) / <alpha-value>)',
-            accent: 'rgb(var(--accent) / <alpha-value>)',
-            teal: 'rgb(var(--teal) / <alpha-value>)'
-          },
-          fontFamily: {
-            display: ['Fraunces', 'Georgia', 'serif'],
-            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
-            mono: ['"JetBrains Mono"', 'ui-monospace', 'monospace']
-          },
-          boxShadow: {
-            card: 'var(--shadow-card)',
-            'card-hover': 'var(--shadow-card-hover)'
-          },
-          transitionTimingFunction: {
-            'out-expo': 'cubic-bezier(0.16,1,0.3,1)',
-            'out-quint': 'cubic-bezier(0.22,1,0.36,1)'
-          },
-          keyframes: {
-            drift: { '0%,100%': { transform: 'translate(0,0) scale(1)' }, '50%': { transform: 'translate(6%,-4%) scale(1.08)' } },
-            blink: { '50%': { opacity: '0' } },
-            'pulse-ring': { '0%': { transform: 'scale(.8)', opacity: '.7' }, '100%': { transform: 'scale(2.2)', opacity: '0' } }
-          },
-          animation: {
-            drift: 'drift 22s ease-in-out infinite',
-            blink: 'blink 1s steps(2) infinite',
-            'spin-slow': 'spin 12s linear infinite',
-            'pulse-ring': 'pulse-ring 1.8s cubic-bezier(0.16,1,0.3,1) infinite'
-          }
-        }
-      }
-    };
-  </script>
-
+  <!-- Precompiled utility CSS is embedded below; no runtime CSS dependency. -->
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com/">
   <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
@@ -416,7 +371,22 @@
     .reduce-motion .timeline-dot { transform: translateX(-50%) !important; }
     .reduce-motion .timeline-dot::after { opacity: 1 !important; }
   </style>
-<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Plus Jakarta Sans", system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"JetBrains Mono", ui-monospace, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-1{inset:0.25rem}.inset-\[4px\]{inset:4px}.inset-x-0{left:0px;right:0px}.bottom-0{bottom:0px}.bottom-2{bottom:0.5rem}.bottom-\[8\%\]{bottom:8%}.left-4{left:1rem}.left-5{left:1.25rem}.left-6{left:1.5rem}.right-\[8\%\]{right:8%}.top-0{top:0px}.top-1\/2{top:50%}.top-4{top:1rem}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.-z-10{z-index:-10}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.z-\[60\]{z-index:60}.z-\[80\]{z-index:80}.m-auto{margin:auto}.mx-auto{margin-left:auto;margin-right:auto}.mb-14{margin-bottom:3.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-auto{margin-left:auto}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-14{margin-top:3.5rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.inline{display:inline}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[16\/10\]{aspect-ratio:16/10}.h-11{height:2.75rem}.h-12{height:3rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[3px\]{height:3px}.h-full{height:100%}.h-10{height:2.5rem}.h-2\.5{height:0.625rem}.h-\[min\(80vh\2c 64rem\)\]{height:min(80vh,64rem)}.min-h-screen{min-height:100vh}.min-h-\[100svh\]{min-height:100svh}.min-h-\[3em\]{min-height:3em}.w-0\.5{width:0.125rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.w-10{width:2.5rem}.w-2\.5{width:0.625rem}.w-\[min\(60rem\2c calc\(100vw-2rem\)\)\]{width:min(60rem,calc(100vw - 2rem))}.min-w-0{min-width:0px}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-prose{max-width:65ch}.max-w-4xl{max-width:56rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes blink{50%{opacity:0}}.animate-blink{animation:blink 1s steps(2) infinite}@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6%,-4%) scale(1.08)}}.animate-drift{animation:drift 22s ease-in-out infinite}@keyframes pulse-ring{0%{transform:scale(.8);opacity:.7}100%{transform:scale(2.2);opacity:0}}.animate-pulse-ring{animation:pulse-ring 1.8s cubic-bezier(0.16,1,0.3,1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin-slow{animation:spin 12s linear infinite}.scroll-mt-24{scroll-margin-top:6rem}.list-disc{list-style-type:disc}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-x-3{column-gap:0.75rem}.gap-x-6{column-gap:1.5rem}.gap-y-1{row-gap:0.25rem}.gap-y-2{row-gap:0.5rem}.space-y-10 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2.5rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-line\/70 > :not([hidden]) ~ :not([hidden]){border-color:rgb(var(--line) / 0.7)}.divide-line > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(var(--line) / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-l{border-left-width:1px}.border-l-2{border-left-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-line{--tw-border-opacity:1;border-color:rgb(var(--line) / var(--tw-border-opacity, 1))}.border-line\/70{border-color:rgb(var(--line) / 0.7)}.border-primary\/30{border-color:rgb(var(--primary) / 0.3)}.border-primary\/60{border-color:rgb(var(--primary) / 0.6)}.bg-bg{--tw-bg-opacity:1;background-color:rgb(var(--bg) / var(--tw-bg-opacity, 1))}.bg-bg\/60{background-color:rgb(var(--bg) / 0.6)}.bg-ink{--tw-bg-opacity:1;background-color:rgb(var(--ink) / var(--tw-bg-opacity, 1))}.bg-line{--tw-bg-opacity:1;background-color:rgb(var(--line) / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(var(--primary) / 0.1)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(var(--surface) / var(--tw-bg-opacity, 1))}.bg-surface\/60{background-color:rgb(var(--surface) / 0.6)}.bg-surface\/70{background-color:rgb(var(--surface) / 0.7)}.bg-surface\/90{background-color:rgb(var(--surface) / 0.9)}.bg-teal{--tw-bg-opacity:1;background-color:rgb(var(--teal) / var(--tw-bg-opacity, 1))}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-0{padding:0px}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-10{padding-bottom:2.5rem}.pl-1\.5{padding-left:0.375rem}.pl-12{padding-left:3rem}.pl-4{padding-left:1rem}.pl-5{padding-left:1.25rem}.pr-1\.5{padding-right:0.375rem}.pt-28{padding-top:7rem}.pr-3{padding-right:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Fraunces, Georgia, serif}.font-mono{font-family:"JetBrains Mono", ui-monospace, monospace}.font-sans{font-family:"Plus Jakarta Sans", system-ui, sans-serif}.text-base{font-size:1rem;line-height:1.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-7xl{font-size:4.5rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tabular-nums{--tw-numeric-spacing:tabular-nums;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)}.leading-\[0\.95\]{line-height:0.95}.leading-\[1\.05\]{line-height:1.05}.leading-none{line-height:1}.leading-normal{line-height:1.5}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-\[1\.02\]{line-height:1.02}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-tight{letter-spacing:-0.025em}.text-bg{--tw-text-opacity:1;color:rgb(var(--bg) / var(--tw-text-opacity, 1))}.text-ink{--tw-text-opacity:1;color:rgb(var(--ink) / var(--tw-text-opacity, 1))}.text-muted{--tw-text-opacity:1;color:rgb(var(--muted) / var(--tw-text-opacity, 1))}.text-on-primary{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(var(--primary) / var(--tw-text-opacity, 1))}.text-white\/25{color:rgb(255 255 255 / 0.25)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.shadow-card{--tw-shadow:var(--shadow-card);--tw-shadow-colored:var(--shadow-card);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-card-hover{--tw-shadow:var(--shadow-card-hover);--tw-shadow-colored:var(--shadow-card-hover);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-\[border-color\2c box-shadow\]{transition-property:border-color,box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.ease-out-quint{transition-timing-function:cubic-bezier(0.22,1,0.36,1)}.marker\:text-primary *::marker{color:rgb(var(--primary) )}.marker\:text-primary::marker{color:rgb(var(--primary) )}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(var(--primary) / var(--tw-border-opacity, 1))}.hover\:border-primary\/50:hover{border-color:rgb(var(--primary) / 0.5)}.hover\:bg-line\/60:hover{background-color:rgb(var(--line) / 0.6)}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/10:hover{background-color:rgb(var(--primary) / 0.1)}.hover\:bg-primary\/90:hover{background-color:rgb(var(--primary) / 0.9)}.hover\:text-ink:hover{--tw-text-opacity:1;color:rgb(var(--ink) / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(var(--primary) / var(--tw-text-opacity, 1))}.hover\:shadow-card-hover:hover{--tw-shadow:var(--shadow-card-hover);--tw-shadow-colored:var(--shadow-card-hover);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:fixed:focus{position:fixed}.focus\:left-4:focus{left:1rem}.focus\:top-4:focus{top:1rem}.focus\:z-\[90\]:focus{z-index:90}.focus\:rounded-full:focus{border-radius:9999px}.focus\:bg-primary:focus{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.focus\:px-5:focus{padding-left:1.25rem;padding-right:1.25rem}.focus\:py-3:focus{padding-top:0.75rem;padding-bottom:0.75rem}.focus\:font-semibold:focus{font-weight:600}.focus\:text-on-primary:focus{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:-translate-y-0\.5{--tw-translate-y:-0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-0\.5{--tw-translate-x:0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-primary{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-on-primary{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}.group:focus-visible .group-focus-visible\:opacity-100{opacity:1}.group[aria-expanded="true"] .group-aria-expanded\:block{display:block}.group[aria-expanded="true"] .group-aria-expanded\:hidden{display:none}.dark\:block:is(.dark *){display:block}.dark\:hidden:is(.dark *){display:none}@media (min-width: 640px){.sm\:inline-flex{display:inline-flex}.sm\:min-h-\[1\.5em\]{min-height:1.5em}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:p-6{padding:1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pl-6{padding-left:1.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-7xl{font-size:4.5rem;line-height:1}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 768px){.md\:left-1\/2{left:50%}.md\:col-span-2{grid-column:span 2 / span 2}.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-6{grid-column:span 6 / span 6}.md\:col-start-2{grid-column-start:2}.md\:mb-20{margin-bottom:5rem}.md\:mb-8{margin-bottom:2rem}.md\:ml-2{margin-left:0.5rem}.md\:mt-24{margin-top:6rem}.md\:inline{display:inline}.md\:flex{display:flex}.md\:grid{display:grid}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.md\:grid-cols-\[10rem_1fr\]{grid-template-columns:10rem 1fr}.md\:flex-row{flex-direction:row}.md\:flex-col{flex-direction:column}.md\:items-start{align-items:flex-start}.md\:justify-center{justify-content:center}.md\:justify-between{justify-content:space-between}.md\:gap-10{gap:2.5rem}.md\:gap-16{gap:4rem}.md\:gap-6{gap:1.5rem}.md\:space-y-14 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3.5rem * var(--tw-space-y-reverse))}.md\:p-8{padding:2rem}.md\:px-10{padding-left:2.5rem;padding-right:2.5rem}.md\:py-36{padding-top:9rem;padding-bottom:9rem}.md\:pl-0{padding-left:0px}.md\:pt-14{padding-top:3.5rem}.md\:pt-32{padding-top:8rem}.md\:pl-2{padding-left:0.5rem}.md\:text-left{text-align:left}.md\:text-center{text-align:center}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-8xl{font-size:6rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-7xl{font-size:4.5rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:h-56{height:14rem}.lg\:w-56{width:14rem}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-\[auto_1fr\]{grid-template-columns:auto 1fr}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:items-center{align-items:center}.lg\:gap-10{gap:2.5rem}.lg\:gap-16{gap:4rem}.lg\:p-8{padding:2rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-8xl{font-size:6rem;line-height:1}}@media (min-width: 1280px){.xl\:block{display:block}.xl\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1536px){.group.is-active .\32xl\:group-\[\.is-active\]\:opacity-100{opacity:1}}</style></head>
+<style>*, ::before, ::after{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }::backdrop{--tw-border-spacing-x:0;--tw-border-spacing-y:0;--tw-translate-x:0;--tw-translate-y:0;--tw-rotate:0;--tw-skew-x:0;--tw-skew-y:0;--tw-scale-x:1;--tw-scale-y:1;--tw-pan-x: ;--tw-pan-y: ;--tw-pinch-zoom: ;--tw-scroll-snap-strictness:proximity;--tw-gradient-from-position: ;--tw-gradient-via-position: ;--tw-gradient-to-position: ;--tw-ordinal: ;--tw-slashed-zero: ;--tw-numeric-figure: ;--tw-numeric-spacing: ;--tw-numeric-fraction: ;--tw-ring-inset: ;--tw-ring-offset-width:0px;--tw-ring-offset-color:#fff;--tw-ring-color:rgb(59 130 246 / 0.5);--tw-ring-offset-shadow:0 0 #0000;--tw-ring-shadow:0 0 #0000;--tw-shadow:0 0 #0000;--tw-shadow-colored:0 0 #0000;--tw-blur: ;--tw-brightness: ;--tw-contrast: ;--tw-grayscale: ;--tw-hue-rotate: ;--tw-invert: ;--tw-saturate: ;--tw-sepia: ;--tw-drop-shadow: ;--tw-backdrop-blur: ;--tw-backdrop-brightness: ;--tw-backdrop-contrast: ;--tw-backdrop-grayscale: ;--tw-backdrop-hue-rotate: ;--tw-backdrop-invert: ;--tw-backdrop-opacity: ;--tw-backdrop-saturate: ;--tw-backdrop-sepia: ;--tw-contain-size: ;--tw-contain-layout: ;--tw-contain-paint: ;--tw-contain-style: }/* ! tailwindcss v3.4.17 | MIT License | https://tailwindcss.com */*,::after,::before{box-sizing:border-box;border-width:0;border-style:solid;border-color:#e5e7eb}::after,::before{--tw-content:''}:host,html{line-height:1.5;-webkit-text-size-adjust:100%;-moz-tab-size:4;tab-size:4;font-family:"Plus Jakarta Sans", system-ui, sans-serif;font-feature-settings:normal;font-variation-settings:normal;-webkit-tap-highlight-color:transparent}body{margin:0;line-height:inherit}hr{height:0;color:inherit;border-top-width:1px}abbr:where([title]){-webkit-text-decoration:underline dotted;text-decoration:underline dotted}h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit}a{color:inherit;text-decoration:inherit}b,strong{font-weight:bolder}code,kbd,pre,samp{font-family:"JetBrains Mono", ui-monospace, monospace;font-feature-settings:normal;font-variation-settings:normal;font-size:1em}small{font-size:80%}sub,sup{font-size:75%;line-height:0;position:relative;vertical-align:baseline}sub{bottom:-.25em}sup{top:-.5em}table{text-indent:0;border-color:inherit;border-collapse:collapse}button,input,optgroup,select,textarea{font-family:inherit;font-feature-settings:inherit;font-variation-settings:inherit;font-size:100%;font-weight:inherit;line-height:inherit;letter-spacing:inherit;color:inherit;margin:0;padding:0}button,select{text-transform:none}button,input:where([type=button]),input:where([type=reset]),input:where([type=submit]){-webkit-appearance:button;background-color:transparent;background-image:none}:-moz-focusring{outline:auto}:-moz-ui-invalid{box-shadow:none}progress{vertical-align:baseline}::-webkit-inner-spin-button,::-webkit-outer-spin-button{height:auto}[type=search]{-webkit-appearance:textfield;outline-offset:-2px}::-webkit-search-decoration{-webkit-appearance:none}::-webkit-file-upload-button{-webkit-appearance:button;font:inherit}summary{display:list-item}blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{margin:0}fieldset{margin:0;padding:0}legend{padding:0}menu,ol,ul{list-style:none;margin:0;padding:0}dialog{padding:0}textarea{resize:vertical}input::placeholder,textarea::placeholder{opacity:1;color:#9ca3af}[role=button],button{cursor:pointer}:disabled{cursor:default}audio,canvas,embed,iframe,img,object,svg,video{display:block;vertical-align:middle}img,video{max-width:100%;height:auto}[hidden]:where(:not([hidden=until-found])){display:none}.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0, 0, 0, 0);white-space:nowrap;border-width:0}.pointer-events-none{pointer-events:none}.fixed{position:fixed}.absolute{position:absolute}.relative{position:relative}.inset-0{inset:0px}.inset-1{inset:0.25rem}.inset-\[4px\]{inset:4px}.inset-x-0{left:0px;right:0px}.bottom-0{bottom:0px}.bottom-2{bottom:0.5rem}.bottom-\[8\%\]{bottom:8%}.left-4{left:1rem}.left-5{left:1.25rem}.left-6{left:1.5rem}.right-\[8\%\]{right:8%}.top-0{top:0px}.top-1\/2{top:50%}.top-4{top:1rem}.bottom-6{bottom:1.5rem}.left-1\/2{left:50%}.-z-10{z-index:-10}.z-10{z-index:10}.z-40{z-index:40}.z-50{z-index:50}.z-\[60\]{z-index:60}.z-\[80\]{z-index:80}.m-auto{margin:auto}.mx-auto{margin-left:auto;margin-right:auto}.mb-14{margin-bottom:3.5rem}.mb-4{margin-bottom:1rem}.mb-6{margin-bottom:1.5rem}.ml-auto{margin-left:auto}.mt-1{margin-top:0.25rem}.mt-10{margin-top:2.5rem}.mt-14{margin-top:3.5rem}.mt-16{margin-top:4rem}.mt-2{margin-top:0.5rem}.mt-3{margin-top:0.75rem}.mt-4{margin-top:1rem}.mt-5{margin-top:1.25rem}.mt-6{margin-top:1.5rem}.mt-8{margin-top:2rem}.block{display:block}.inline-block{display:inline-block}.inline{display:inline}.flex{display:flex}.inline-flex{display:inline-flex}.grid{display:grid}.hidden{display:none}.aspect-\[16\/10\]{aspect-ratio:16/10}.h-11{height:2.75rem}.h-12{height:3rem}.h-3{height:0.75rem}.h-4{height:1rem}.h-40{height:10rem}.h-5{height:1.25rem}.h-6{height:1.5rem}.h-8{height:2rem}.h-\[3px\]{height:3px}.h-full{height:100%}.h-10{height:2.5rem}.h-2\.5{height:0.625rem}.h-\[min\(80vh\2c 64rem\)\]{height:min(80vh,64rem)}.min-h-screen{min-height:100vh}.min-h-\[100svh\]{min-height:100svh}.min-h-\[3em\]{min-height:3em}.w-0\.5{width:0.125rem}.w-11{width:2.75rem}.w-12{width:3rem}.w-3{width:0.75rem}.w-4{width:1rem}.w-40{width:10rem}.w-5{width:1.25rem}.w-6{width:1.5rem}.w-full{width:100%}.w-10{width:2.5rem}.w-2\.5{width:0.625rem}.w-\[min\(60rem\2c calc\(100vw-2rem\)\)\]{width:min(60rem,calc(100vw - 2rem))}.min-w-0{min-width:0px}.max-w-3xl{max-width:48rem}.max-w-5xl{max-width:64rem}.max-w-6xl{max-width:72rem}.max-w-prose{max-width:65ch}.max-w-4xl{max-width:56rem}.max-w-none{max-width:none}.flex-1{flex:1 1 0%}.shrink-0{flex-shrink:0}.-translate-x-1\/2{--tw-translate-x:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.-translate-y-1\/2{--tw-translate-y:-50%;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}@keyframes blink{50%{opacity:0}}.animate-blink{animation:blink 1s steps(2) infinite}@keyframes drift{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(6%,-4%) scale(1.08)}}.animate-drift{animation:drift 22s ease-in-out infinite}@keyframes pulse-ring{0%{transform:scale(.8);opacity:.7}100%{transform:scale(2.2);opacity:0}}.animate-pulse-ring{animation:pulse-ring 1.8s cubic-bezier(0.16,1,0.3,1) infinite}@keyframes spin{to{transform:rotate(360deg)}}.animate-spin-slow{animation:spin 12s linear infinite}.scroll-mt-24{scroll-margin-top:6rem}.list-disc{list-style-type:disc}.grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.flex-col{flex-direction:column}.flex-wrap{flex-wrap:wrap}.place-items-center{place-items:center}.items-start{align-items:flex-start}.items-center{align-items:center}.justify-center{justify-content:center}.justify-between{justify-content:space-between}.gap-1{gap:0.25rem}.gap-1\.5{gap:0.375rem}.gap-10{gap:2.5rem}.gap-12{gap:3rem}.gap-2{gap:0.5rem}.gap-3{gap:0.75rem}.gap-4{gap:1rem}.gap-6{gap:1.5rem}.gap-x-3{column-gap:0.75rem}.gap-x-6{column-gap:1.5rem}.gap-y-1{row-gap:0.25rem}.gap-y-2{row-gap:0.5rem}.space-y-10 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(2.5rem * var(--tw-space-y-reverse))}.space-y-2 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.5rem * var(--tw-space-y-reverse))}.space-y-3 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(0.75rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(0.75rem * var(--tw-space-y-reverse))}.divide-y > :not([hidden]) ~ :not([hidden]){--tw-divide-y-reverse:0;border-top-width:calc(1px * calc(1 - var(--tw-divide-y-reverse)));border-bottom-width:calc(1px * var(--tw-divide-y-reverse))}.divide-line\/70 > :not([hidden]) ~ :not([hidden]){border-color:rgb(var(--line) / 0.7)}.divide-line > :not([hidden]) ~ :not([hidden]){--tw-divide-opacity:1;border-color:rgb(var(--line) / var(--tw-divide-opacity, 1))}.overflow-hidden{overflow:hidden}.truncate{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.break-all{word-break:break-all}.rounded-2xl{border-radius:1rem}.rounded-3xl{border-radius:1.5rem}.rounded-full{border-radius:9999px}.border{border-width:1px}.border-l{border-left-width:1px}.border-l-2{border-left-width:2px}.border-b{border-bottom-width:1px}.border-t{border-top-width:1px}.border-dashed{border-style:dashed}.border-line{--tw-border-opacity:1;border-color:rgb(var(--line) / var(--tw-border-opacity, 1))}.border-line\/70{border-color:rgb(var(--line) / 0.7)}.border-primary\/30{border-color:rgb(var(--primary) / 0.3)}.border-primary\/60{border-color:rgb(var(--primary) / 0.6)}.bg-bg{--tw-bg-opacity:1;background-color:rgb(var(--bg) / var(--tw-bg-opacity, 1))}.bg-bg\/60{background-color:rgb(var(--bg) / 0.6)}.bg-ink{--tw-bg-opacity:1;background-color:rgb(var(--ink) / var(--tw-bg-opacity, 1))}.bg-line{--tw-bg-opacity:1;background-color:rgb(var(--line) / var(--tw-bg-opacity, 1))}.bg-primary{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.bg-primary\/10{background-color:rgb(var(--primary) / 0.1)}.bg-surface{--tw-bg-opacity:1;background-color:rgb(var(--surface) / var(--tw-bg-opacity, 1))}.bg-surface\/60{background-color:rgb(var(--surface) / 0.6)}.bg-surface\/70{background-color:rgb(var(--surface) / 0.7)}.bg-surface\/90{background-color:rgb(var(--surface) / 0.9)}.bg-teal{--tw-bg-opacity:1;background-color:rgb(var(--teal) / var(--tw-bg-opacity, 1))}.p-1\.5{padding:0.375rem}.p-2{padding:0.5rem}.p-4{padding:1rem}.p-5{padding:1.25rem}.p-6{padding:1.5rem}.p-0{padding:0px}.px-2\.5{padding-left:0.625rem;padding-right:0.625rem}.px-3{padding-left:0.75rem;padding-right:0.75rem}.px-4{padding-left:1rem;padding-right:1rem}.px-5{padding-left:1.25rem;padding-right:1.25rem}.px-6{padding-left:1.5rem;padding-right:1.5rem}.py-0\.5{padding-top:0.125rem;padding-bottom:0.125rem}.py-1{padding-top:0.25rem;padding-bottom:0.25rem}.py-1\.5{padding-top:0.375rem;padding-bottom:0.375rem}.py-24{padding-top:6rem;padding-bottom:6rem}.py-14{padding-top:3.5rem;padding-bottom:3.5rem}.py-2{padding-top:0.5rem;padding-bottom:0.5rem}.py-3{padding-top:0.75rem;padding-bottom:0.75rem}.pb-10{padding-bottom:2.5rem}.pl-1\.5{padding-left:0.375rem}.pl-12{padding-left:3rem}.pl-4{padding-left:1rem}.pl-5{padding-left:1.25rem}.pr-1\.5{padding-right:0.375rem}.pt-28{padding-top:7rem}.pr-3{padding-right:0.75rem}.text-left{text-align:left}.text-center{text-align:center}.font-display{font-family:Fraunces, Georgia, serif}.font-mono{font-family:"JetBrains Mono", ui-monospace, monospace}.font-sans{font-family:"Plus Jakarta Sans", system-ui, sans-serif}.text-base{font-size:1rem;line-height:1.5rem}.text-2xl{font-size:1.5rem;line-height:2rem}.text-3xl{font-size:1.875rem;line-height:2.25rem}.text-4xl{font-size:2.25rem;line-height:2.5rem}.text-5xl{font-size:3rem;line-height:1}.text-6xl{font-size:3.75rem;line-height:1}.text-7xl{font-size:4.5rem;line-height:1}.text-lg{font-size:1.125rem;line-height:1.75rem}.text-sm{font-size:0.875rem;line-height:1.25rem}.text-xl{font-size:1.25rem;line-height:1.75rem}.text-xs{font-size:0.75rem;line-height:1rem}.font-medium{font-weight:500}.font-semibold{font-weight:600}.font-normal{font-weight:400}.uppercase{text-transform:uppercase}.italic{font-style:italic}.tabular-nums{--tw-numeric-spacing:tabular-nums;font-variant-numeric:var(--tw-ordinal) var(--tw-slashed-zero) var(--tw-numeric-figure) var(--tw-numeric-spacing) var(--tw-numeric-fraction)}.leading-\[0\.95\]{line-height:0.95}.leading-\[1\.05\]{line-height:1.05}.leading-none{line-height:1}.leading-normal{line-height:1.5}.leading-relaxed{line-height:1.625}.leading-snug{line-height:1.375}.leading-\[1\.02\]{line-height:1.02}.tracking-\[0\.2em\]{letter-spacing:0.2em}.tracking-\[0\.3em\]{letter-spacing:0.3em}.tracking-tight{letter-spacing:-0.025em}.text-bg{--tw-text-opacity:1;color:rgb(var(--bg) / var(--tw-text-opacity, 1))}.text-ink{--tw-text-opacity:1;color:rgb(var(--ink) / var(--tw-text-opacity, 1))}.text-muted{--tw-text-opacity:1;color:rgb(var(--muted) / var(--tw-text-opacity, 1))}.text-on-primary{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.text-primary{--tw-text-opacity:1;color:rgb(var(--primary) / var(--tw-text-opacity, 1))}.text-white\/25{color:rgb(255 255 255 / 0.25)}.text-white\/90{color:rgb(255 255 255 / 0.9)}.antialiased{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}.opacity-0{opacity:0}.shadow-card{--tw-shadow:var(--shadow-card);--tw-shadow-colored:var(--shadow-card);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.shadow-card-hover{--tw-shadow:var(--shadow-card-hover);--tw-shadow-colored:var(--shadow-card-hover);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.backdrop-blur-md{--tw-backdrop-blur:blur(12px);-webkit-backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);backdrop-filter:var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia)}.transition{transition-property:color, background-color, border-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-text-decoration-color, -webkit-backdrop-filter;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-\[border-color\2c box-shadow\]{transition-property:border-color,box-shadow;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-colors{transition-property:color, background-color, border-color, fill, stroke, -webkit-text-decoration-color;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke;transition-property:color, background-color, border-color, text-decoration-color, fill, stroke, -webkit-text-decoration-color;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-opacity{transition-property:opacity;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.transition-transform{transition-property:transform;transition-timing-function:cubic-bezier(0.4, 0, 0.2, 1);transition-duration:150ms}.duration-300{transition-duration:300ms}.ease-out-quint{transition-timing-function:cubic-bezier(0.22,1,0.36,1)}.marker\:text-primary *::marker{color:rgb(var(--primary) )}.marker\:text-primary::marker{color:rgb(var(--primary) )}.hover\:border-primary:hover{--tw-border-opacity:1;border-color:rgb(var(--primary) / var(--tw-border-opacity, 1))}.hover\:border-primary\/50:hover{border-color:rgb(var(--primary) / 0.5)}.hover\:bg-line\/60:hover{background-color:rgb(var(--line) / 0.6)}.hover\:bg-primary:hover{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.hover\:bg-primary\/10:hover{background-color:rgb(var(--primary) / 0.1)}.hover\:bg-primary\/90:hover{background-color:rgb(var(--primary) / 0.9)}.hover\:text-ink:hover{--tw-text-opacity:1;color:rgb(var(--ink) / var(--tw-text-opacity, 1))}.hover\:text-primary:hover{--tw-text-opacity:1;color:rgb(var(--primary) / var(--tw-text-opacity, 1))}.hover\:shadow-card-hover:hover{--tw-shadow:var(--shadow-card-hover);--tw-shadow-colored:var(--shadow-card-hover);box-shadow:var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow)}.focus\:not-sr-only:focus{position:static;width:auto;height:auto;padding:0;margin:0;overflow:visible;clip:auto;white-space:normal}.focus\:fixed:focus{position:fixed}.focus\:left-4:focus{left:1rem}.focus\:top-4:focus{top:1rem}.focus\:z-\[90\]:focus{z-index:90}.focus\:rounded-full:focus{border-radius:9999px}.focus\:bg-primary:focus{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.focus\:px-5:focus{padding-left:1.25rem;padding-right:1.25rem}.focus\:py-3:focus{padding-top:0.75rem;padding-bottom:0.75rem}.focus\:font-semibold:focus{font-weight:600}.focus\:text-on-primary:focus{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.group:hover .group-hover\:translate-x-1{--tw-translate-x:0.25rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:-translate-y-0\.5{--tw-translate-y:-0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:translate-x-0\.5{--tw-translate-x:0.125rem;transform:translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))}.group:hover .group-hover\:bg-primary{--tw-bg-opacity:1;background-color:rgb(var(--primary) / var(--tw-bg-opacity, 1))}.group:hover .group-hover\:text-on-primary{--tw-text-opacity:1;color:rgb(var(--on-primary) / var(--tw-text-opacity, 1))}.group:hover .group-hover\:opacity-100{opacity:1}.group:focus-visible .group-focus-visible\:opacity-100{opacity:1}.group[aria-expanded="true"] .group-aria-expanded\:block{display:block}.group[aria-expanded="true"] .group-aria-expanded\:hidden{display:none}.dark\:block:is(.dark *){display:block}.dark\:hidden:is(.dark *){display:none}@media (min-width: 640px){.sm\:inline-flex{display:inline-flex}.sm\:min-h-\[1\.5em\]{min-height:1.5em}.sm\:grid-cols-3{grid-template-columns:repeat(3, minmax(0, 1fr))}.sm\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.sm\:p-6{padding:1.5rem}.sm\:px-6{padding-left:1.5rem;padding-right:1.5rem}.sm\:pl-6{padding-left:1.5rem}.sm\:text-5xl{font-size:3rem;line-height:1}.sm\:text-7xl{font-size:4.5rem;line-height:1}.sm\:text-xl{font-size:1.25rem;line-height:1.75rem}}@media (min-width: 768px){.md\:left-1\/2{left:50%}.md\:col-span-2{grid-column:span 2 / span 2}.md\:col-span-4{grid-column:span 4 / span 4}.md\:col-span-6{grid-column:span 6 / span 6}.md\:col-start-2{grid-column-start:2}.md\:mb-20{margin-bottom:5rem}.md\:mb-8{margin-bottom:2rem}.md\:ml-2{margin-left:0.5rem}.md\:mt-24{margin-top:6rem}.md\:inline{display:inline}.md\:flex{display:flex}.md\:grid{display:grid}.md\:hidden{display:none}.md\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.md\:grid-cols-6{grid-template-columns:repeat(6, minmax(0, 1fr))}.md\:grid-cols-\[10rem_1fr\]{grid-template-columns:10rem 1fr}.md\:flex-row{flex-direction:row}.md\:flex-col{flex-direction:column}.md\:items-start{align-items:flex-start}.md\:justify-center{justify-content:center}.md\:justify-between{justify-content:space-between}.md\:gap-10{gap:2.5rem}.md\:gap-16{gap:4rem}.md\:gap-6{gap:1.5rem}.md\:space-y-14 > :not([hidden]) ~ :not([hidden]){--tw-space-y-reverse:0;margin-top:calc(3.5rem * calc(1 - var(--tw-space-y-reverse)));margin-bottom:calc(3.5rem * var(--tw-space-y-reverse))}.md\:p-8{padding:2rem}.md\:px-10{padding-left:2.5rem;padding-right:2.5rem}.md\:py-36{padding-top:9rem;padding-bottom:9rem}.md\:pl-0{padding-left:0px}.md\:pt-14{padding-top:3.5rem}.md\:pt-32{padding-top:8rem}.md\:pl-2{padding-left:0.5rem}.md\:text-left{text-align:left}.md\:text-center{text-align:center}.md\:text-2xl{font-size:1.5rem;line-height:2rem}.md\:text-3xl{font-size:1.875rem;line-height:2.25rem}.md\:text-4xl{font-size:2.25rem;line-height:2.5rem}.md\:text-6xl{font-size:3.75rem;line-height:1}.md\:text-8xl{font-size:6rem;line-height:1}.md\:text-base{font-size:1rem;line-height:1.5rem}.md\:text-lg{font-size:1.125rem;line-height:1.75rem}.md\:text-xl{font-size:1.25rem;line-height:1.75rem}.md\:text-7xl{font-size:4.5rem;line-height:1}}@media (min-width: 1024px){.lg\:col-span-5{grid-column:span 5 / span 5}.lg\:col-span-7{grid-column:span 7 / span 7}.lg\:h-56{height:14rem}.lg\:w-56{width:14rem}.lg\:grid-cols-12{grid-template-columns:repeat(12, minmax(0, 1fr))}.lg\:grid-cols-2{grid-template-columns:repeat(2, minmax(0, 1fr))}.lg\:grid-cols-\[auto_1fr\]{grid-template-columns:auto 1fr}.lg\:grid-cols-4{grid-template-columns:repeat(4, minmax(0, 1fr))}.lg\:items-center{align-items:center}.lg\:gap-10{gap:2.5rem}.lg\:gap-16{gap:4rem}.lg\:p-8{padding:2rem}.lg\:px-8{padding-left:2rem;padding-right:2rem}.lg\:text-8xl{font-size:6rem;line-height:1}}@media (min-width: 1280px){.xl\:block{display:block}.xl\:text-6xl{font-size:3.75rem;line-height:1}}@media (min-width: 1536px){.group.is-active .\32xl\:group-\[\.is-active\]\:opacity-100{opacity:1}}</style><style>
+.object-contain { object-fit: contain; }
+.bg-surface\/40 { background-color: rgb(var(--surface) / .4); }
+a:focus-visible, button:focus-visible { outline: 3px solid rgb(var(--primary)); outline-offset: 4px; }
+img { max-width: 100%; }
+.resume-dialog { max-height: calc(100dvh - 2rem); }
+.resume-dialog iframe { height: min(76dvh, 64rem); }
+@media (max-width: 420px) {
+  .resume-dialog > div { flex-wrap: wrap; }
+  .toast { max-width: calc(100vw - 2rem); width: max-content; overflow-wrap: anywhere; }
+}
+@media print {
+  [data-reveal], .hero-word { opacity: 1 !important; transform: none !important; filter: none !important; }
+  header, .aurora, body::after, [data-progress], [data-rail-link], .scroll-cue-line { display: none !important; }
+}
+</style></head>
 
 <body class="min-h-screen text-base antialiased">
 
@@ -528,24 +498,17 @@
             <p data-reveal="" data-delay="150" class="font-mono text-xs uppercase tracking-[0.2em] text-primary is-visible" style="--reveal-delay: 150ms;">Portfolio · Wollongong, NSW</p>
 
             <!-- EDIT: hello.name -->
-            <h1 id="hello-title" data-split="" class="mt-4 font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl is-split"><span class="hero-word is-visible" style="--reveal-delay: 300ms;">Hi,</span> <span class="hero-word is-visible" style="--reveal-delay: 380ms;">I'm</span> <span class="hero-word gradient-text italic is-visible" style="--reveal-delay: 460ms;">Vanni</span> <span class="hero-word gradient-text italic is-visible" style="--reveal-delay: 540ms;">Dinh.</span></h1>
+            <h1 id="hello-title" data-split="" class="mt-4 font-display text-5xl font-semibold leading-[0.95] tracking-tight sm:text-7xl lg:text-8xl is-split">Hi, I'm <span class="gradient-text italic">Vanni Dinh.</span></h1>
 
             <!-- Typed role line. EDIT the roles in CONTENT (script at the bottom); the text below only shows if JS is off. -->
             <p data-reveal="" data-delay="700" class="mt-6 min-h-[3em] font-mono text-xl leading-normal sm:min-h-[1.5em] md:text-2xl is-visible" style="--reveal-delay: 700ms;">
-              <span aria-hidden="true">I'm <span class="text-primary" data-typed="roles">a Business Ana</span><span class="caret animate-blink is-typing" data-caret=""></span></span>
-              <span class="sr-only" data-typed-sr="roles">I'm a Data Analyst, a Business Analyst, a Power BI Dashboard Builder, and a Master of IT Student.</span>
+              <span aria-hidden="true">I'm <span class="text-primary" data-typed="roles">a Master of IT Student</span><span class="caret animate-blink is-typing" data-caret=""></span></span>
+              <span class="sr-only" data-typed-sr="roles">I'm an aspiring Data Analyst and Business Analyst, a Power BI dashboard builder, and a Master of IT student.</span>
             </p>
 
             <!-- EDIT: hello.summary -->
             <p data-reveal="" data-delay="850" class="mt-5 max-w-prose text-base leading-relaxed text-muted md:text-lg is-visible" style="--reveal-delay: 850ms;">
-              I am a final-semester Master of Information Technology 
-student at the University of Wollongong, majoring in Enterprise Systems 
-and Information Design &amp; Analysis. With a strong academic background
- in finance, banking and accounting and hands-on retail banking 
-experience, I build business data analyses and dashboards with Power BI,
- SQL and Tableau. I'm looking for an entry-level Data Analyst or 
-Business Analyst role where business, data and technology meet.
-            </p>
+              I am a final-semester Master of Information Technology student at the University of Wollongong with a finance and banking background. Through academic projects, I have applied BPMN process mapping, data analysis and Power BI reporting to document workflows, examine findings and recommend improvements. I also bring customer service experience from a banking internship, and team leadership and stakeholder coordination through student charity projects.</p>
 
             <!-- EDIT: hello.ctas -->
             <div data-reveal="" data-hero-late="" data-delay="0" class="mt-8 flex flex-wrap items-center gap-3 is-visible" style="--reveal-delay: 0ms;">
@@ -553,7 +516,7 @@ Business Analyst role where business, data and technology meet.
                 View my work
                 <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M19 12l-7 7-7-7"></path></svg>
               </a>
-              <a href="./assets/resume.pdf" target="_blank" rel="noopener" data-resume-open="" class="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/60 px-6 font-semibold text-ink transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+              <a href="./assets/resume.pdf" target="_blank" data-resume-open="" class="inline-flex h-12 items-center gap-2 rounded-full border border-line bg-surface/60 px-6 font-semibold text-ink transition duration-300 ease-out-quint hover:border-primary hover:text-primary" rel="noopener noreferrer">
                 View resume
               </a>
             </div>
@@ -561,12 +524,12 @@ Business Analyst role where business, data and technology meet.
             <!-- EDIT: hello.socials -->
             <ul data-reveal="" data-hero-late="" data-delay="120" class="mt-6 flex items-center gap-2 is-visible" aria-label="Social profiles" style="--reveal-delay: 120ms;">
               <li>
-                <a href="https://www.linkedin.com/in/vannidinh" target="_blank" rel="noopener" aria-label="LinkedIn (opens in a new tab)" class="grid h-11 w-11 place-items-center rounded-full border border-line/70 bg-surface/60 text-muted transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+                <a href="https://www.linkedin.com/in/vannidinh" target="_blank" aria-label="LinkedIn (opens in a new tab)" class="grid h-11 w-11 place-items-center rounded-full border border-line/70 bg-surface/60 text-muted transition duration-300 ease-out-quint hover:border-primary hover:text-primary" rel="noopener noreferrer">
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
                 </a>
               </li>
               <li>
-                <a href="https://github.com/vanni442" target="_blank" rel="noopener" aria-label="GitHub (opens in a new tab)" class="grid h-11 w-11 place-items-center rounded-full border border-line/70 bg-surface/60 text-muted transition duration-300 ease-out-quint hover:border-primary hover:text-primary">
+                <a href="https://github.com/vanni442" target="_blank" aria-label="GitHub (opens in a new tab)" class="grid h-11 w-11 place-items-center rounded-full border border-line/70 bg-surface/60 text-muted transition duration-300 ease-out-quint hover:border-primary hover:text-primary" rel="noopener noreferrer">
                   <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
                 </a>
               </li>
@@ -605,7 +568,7 @@ Accounting from the Academy of Finance and the University of Greenwich
 (First Class Honours, graduating valedictorian) and gained retail 
 banking experience at SHB. I turn data into <span class="highlight">dashboards and clear recommendations</span>, with strengths in <span class="highlight">stakeholder communication</span> and <span class="highlight">problem solving</span>.
             </p>
-            <!-- TODO: optionally add a personal-touch line here (hobbies, interests) — not in the résumé -->
+            
 
             <!-- EDIT: about.currently -->
             <div data-reveal="" class="mt-10">
@@ -646,14 +609,14 @@ banking experience at SHB. I turn data into <span class="highlight">dashboards a
               </li>
               <li data-reveal="scale-in" style="--reveal-delay: 180ms;">
                 <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
-                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span id="project-count" data-count="5" data-decimals="0">5</span></p>
-                  <p class="mt-2 text-sm text-muted">Analytics projects</p>
+                  <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="5" data-decimals="0">5</span></p>
+                  <p class="mt-2 text-sm text-muted">Project portfolios</p>
                 </div>
               </li>
               <li data-reveal="scale-in" style="--reveal-delay: 270ms;">
                 <div class="h-full rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md sm:p-6">
                   <p class="gradient-text font-display text-4xl font-semibold tabular-nums tracking-tight sm:text-5xl xl:text-6xl"><span data-count="3" data-decimals="0">3</span></p>
-                  <p class="mt-2 text-sm text-muted">Certifications</p>
+                  <p class="mt-2 text-sm text-muted">Training courses</p>
                 </div>
               </li>
             </ul>
@@ -679,9 +642,9 @@ banking experience at SHB. I turn data into <span class="highlight">dashboards a
             <div data-reveal="" class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md" style="--reveal-delay: 90ms;">
               <p class="font-display text-xl font-semibold">Business Analysis &amp; Process Modelling</p>
               <ul class="mt-4 flex flex-wrap gap-2">
-                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Requirements Analysis</li>
-                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Stakeholder Analysis</li>
-                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Gap Analysis</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Process Documentation</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Business Rules</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Implementation Planning</li>
                 <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">BPMN</li>
                 <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">ArchiMate</li>
               </ul>
@@ -689,7 +652,8 @@ banking experience at SHB. I turn data into <span class="highlight">dashboards a
             <div data-reveal="" class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md" style="--reveal-delay: 180ms;">
               <p class="font-display text-xl font-semibold">Data &amp; Technical Foundations</p>
               <ul class="mt-4 flex flex-wrap gap-2">
-                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Python</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">Python (academic coursework)</li>
+                <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm">SQL (academic coursework)</li>
                 <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">JSON</li>
                 <li class="rounded-full border border-line bg-bg/60 px-3 py-1.5 text-sm transition-colors hover:border-primary hover:text-primary">XML</li>
               </ul>
@@ -737,14 +701,14 @@ banking experience at SHB. I turn data into <span class="highlight">dashboards a
                         <p class="font-mono text-xs text-muted"><time datetime="2020-10">Oct 2020</time> — <time datetime="2023-07">Jul 2023</time></p>
                         <span class="rounded-full bg-primary/10 px-2.5 py-0.5 text-xs font-medium text-primary">Leadership</span>
                       </div>
-                      <h3 class="mt-2 font-display text-xl font-semibold md:text-2xl">Deputy Chairperson, Finance &amp; Human Resources</h3>
+                      <h3 class="mt-2 font-display text-xl font-semibold md:text-2xl">Finance Team Lead &amp; Vice President</h3>
                       <p class="text-sm text-muted">DDP Charity Bridge Club (University Student Charity Organisation) · Hanoi, Vietnam</p>
                     </div>
                   </div>
                   <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted marker:text-primary md:text-base">
-                    <li>Coordinated finance and HR operations for a 70-member student charity: recruitment, member allocation and event staffing.</li>
-                    <li>Led the finance team: budgets, income and expenses, reimbursements, fundraising and financial reporting.</li>
-                    <li>Managed financial coordination for the annual charity event (fundraising scale of VND 100–130 million), working with university staff, sponsors and external student organisations.</li>
+                    <li>Served concurrently as Finance Team Lead and Vice President responsible for Finance and Human Resources in a 70-member student charity.</li>
+                    <li>Led six finance members in budgeting and expense monitoring, working with team leads to coordinate finance, HR and event activities.</li>
+                    <li>Coordinated budgets of approximately VND 100–130M per project and university approvals for three Lunar New Year charity projects, supporting approximately 150–200 children in mountainous communities per project.</li>
                   </ul>
                   <ul class="mt-5 flex flex-wrap gap-2" aria-label="Skills used">
                     <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Budgeting</li>
@@ -773,16 +737,9 @@ banking experience at SHB. I turn data into <span class="highlight">dashboards a
                     </div>
                   </div>
                   <ul class="mt-4 list-disc space-y-2 pl-5 text-sm leading-relaxed text-muted marker:text-primary md:text-base">
-                    <li>Analysed internal lending policies and consumer 
-loan files: secured/unsecured requirements, eligibility criteria, 
-documentation and lending-process steps.</li>
-                    <li>Supported a preliminary mortgage credit 
-assessment: gathered income, credit-history and debt data and calculated
- debt-to-income (DTI) ratios.</li>
-                    <li>Evaluated credit-card eligibility and proposed 
-limits using Credit Information Centre (CIC) data, debt exposure and 
-repayment history.</li>
-                    <li>Supported retail customer engagement, assisting savings customers and communicating promotional programmes.</li>
+                    <li>Reviewed financial information and calculated debt-to-income (DTI) ratios against the bank’s internal lending criteria, preparing preliminary mortgage assessment conclusions for supervisor review.</li>
+                    <li>Assessed credit card eligibility and proposed limits in practice cases by interpreting printed Credit Information Centre (CIC) reports against internal bank criteria, submitting recommendations to the supervisor.</li>
+                    <li>Assisted customers with account and card applications, prepared supporting documentation and participated in customer appreciation events.</li>
                   </ul>
                   <ul class="mt-5 flex flex-wrap gap-2" aria-label="Skills used">
                     <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Credit Assessment</li>
@@ -818,32 +775,29 @@ repayment history.</li>
           <h2 id="projects-title" data-reveal="blur-in" class="relative max-w-3xl font-display text-4xl font-semibold leading-[1.05] tracking-tight md:text-6xl">Projects</h2>
         </div>
 
-        <!-- EDIT: projects.featured — swap the thumbnail <div class="thumb"> for
-             <img src="/Users/dingvanh/Documents/Online Courses/JRM/GITHUB/SuperStores project.jpeg" alt="SuperStore Power BI dashboard" width="800" height="500" loading="lazy" class="aspect-[16/10] w-full rounded-2xl object-cover"> -->
+        <!-- Featured individual course project -->
         <div data-reveal="" class="mb-6 md:mb-8">
           <div>
             <article class="relative grid gap-6 overflow-hidden rounded-3xl border border-line/70 bg-surface/70 p-4 shadow-card backdrop-blur-md sm:p-6 lg:grid-cols-2 lg:items-center lg:gap-10 lg:p-8">
                 <div class="relative aspect-[16/10] overflow-hidden rounded-2xl">
                     <img
                       src="./assets/superstores.png"
-                      alt="SuperStores Retail Profitability Analysis dashboard"
+                      alt="SuperStore Retail Profitability Analysis dashboard"
                       class="h-full w-full object-contain"
                     />
                   </div>
 
               <div class="relative">
                 <p class="font-mono text-xs uppercase tracking-[0.2em] text-primary">Featured · <time datetime="2026-06">June 2026</time></p>
-                <h3 class="mt-2 font-display text-3xl font-semibold tracking-tight md:text-4xl">SuperStores Retail Profitability Analysis</h3>
+                <h3 class="mt-2 font-display text-3xl font-semibold tracking-tight md:text-4xl">SuperStore Retail Profitability Analysis</h3>
                 <p class="mt-2 text-base leading-relaxed text-muted md:text-lg">A Power BI deep-dive into where a retailer makes and loses money.</p>
-                <!-- TODO: confirm role (e.g. "Solo analyst") — not stated in the résumé -->
-                <p class="mt-3 text-sm text-muted"><span class="font-semibold text-ink">Role: </span>Project Analyst</p>
+                
+                <p class="mt-3 text-sm text-muted"><span class="font-semibold text-ink">Role: </span>Individual course project</p>
 
                 <dl class="mt-5 space-y-3 border-l-2 border-primary/30 pl-4 text-sm leading-relaxed">
-                  <div><dt class="inline font-semibold text-ink">Problem.</dt> <dd class="inline text-muted">Understand profitability across products, regions, segments, discounts and shipping modes.</dd></div>
-                  <div><dt class="inline font-semibold text-ink">Approach.</dt> <dd class="inline text-muted">Analysed $2.33M in sales and $292.3K in profit with Power Query and DAX in Power BI.</dd></div>
-                  <div><dt class="inline font-semibold text-ink">Outcome.</dt> <dd class="inline text-muted">Surfaced
- 26.3% loss-making orders, weak Furniture performance and high discount 
-levels, supporting pricing and discount-control recommendations.</dd></div>
+                  <div><dt class="inline font-semibold text-ink">Problem.</dt> <dd class="inline text-muted">Investigate transaction losses and discount patterns that category-level profit can obscure in the Sample Superstore dataset.</dd></div>
+                  <div><dt class="inline font-semibold text-ink">Approach.</dt> <dd class="inline text-muted">Built a four-page dashboard covering $2.33M in sales using Power BI, Power Query and DAX.</dd></div>
+                  <div><dt class="inline font-semibold text-ink">Outcome.</dt> <dd class="inline text-muted">Identified $61.7K in Furniture transaction losses despite positive category net profit. Examined losses associated with high discounts and recommended pricing reviews and discount controls.</dd></div>
                 </dl>
 
                 <ul class="mt-5 flex flex-wrap gap-2" aria-label="Technologies">
@@ -853,10 +807,10 @@ levels, supporting pricing and discount-control recommendations.</dd></div>
                 </ul>
 
                 <ul class="mt-6 flex flex-wrap gap-2">
-                  <!-- TODO(link): GitHub repository URL for SuperStore Retail Profitability Analysis -->
-                  <li><a href="https://github.com/vanni442/Power_BI_SuperStores.git" target="_blank" aria-label="GitHub repository for SuperStore Retail Profitability Analysis" class="inline-flex h-11 items-center gap-1.5 rounded-full bg-primary px-5 text-sm font-semibold text-on-primary transition-colors duration-300 hover:bg-primary/90">GitHub <span aria-hidden="true">↗</span></a></li>
-                  <!-- TODO(link): published Power BI dashboard URL -->
-                  <li><a href="https://github.com/vanni442/Power_BI_SuperStores/blob/main/Power_BI_Dashboard_Superstores.pdf" target="_blank" aria-label="Dashboard for SuperStore Retail Profitability Analysis" class="inline-flex h-11 items-center gap-1.5 rounded-full border border-line px-5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary">Dashboard <span aria-hidden="true">↗</span></a></li>
+                  
+                  <li><a href="https://github.com/vanni442/Power_BI_SuperStores" target="_blank" aria-label="GitHub repository for SuperStore Retail Profitability Analysis" class="inline-flex h-11 items-center gap-1.5 rounded-full bg-primary px-5 text-sm font-semibold text-on-primary transition-colors duration-300 hover:bg-primary/90" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a></li>
+                  
+                  <li><a href="https://github.com/vanni442/Power_BI_SuperStores/blob/main/Power_BI_Dashboard_Superstores.pdf" target="_blank" aria-label="Dashboard for SuperStore Retail Profitability Analysis" class="inline-flex h-11 items-center gap-1.5 rounded-full border border-line px-5 text-sm font-semibold transition-colors hover:border-primary hover:text-primary" rel="noopener noreferrer">Dashboard <span aria-hidden="true">↗</span></a></li>
                 </ul>
               </div>
             </article>
@@ -874,8 +828,8 @@ levels, supporting pricing and discount-control recommendations.</dd></div>
               <h3 class="font-display text-xl font-semibold leading-snug md:text-2xl">Business Process Analysis and Improvement</h3>
               <p class="mt-2 max-w-prose text-sm leading-relaxed text-muted md:text-base">Two Business Process Management case studies completed at UOW, covering process mapping, business rules, improvement recommendations and implementation planning.</p>
               <dl class="mt-4 space-y-3 text-sm leading-relaxed md:text-base">
-                <div><dt class="font-semibold text-ink">Individual project: library overdue book handling</dt><dd class="text-muted">Developed a BPMN model across 6 participants, documenting responsibilities, payment exceptions, 7-day follow-ups and 60-day closure rules.</dd></div>
-                <div><dt class="font-semibold text-ink">Group project: Uber Eats process improvement</dt><dd class="text-muted">Prepared a 3-phase implementation and control plan, translating process analysis into performance measures and risk mitigations for proposed dispatch and exception-handling improvements. Supported analysis and report preparation; process diagrams and redesign were group deliverables.</dd></div>
+                <div><dt class="font-semibold text-ink">Individual project: library overdue book handling</dt><dd class="text-muted">Translated a supplied case study into a BPMN model spanning six participants, with supporting documentation explaining business rules, exception handling and modelling assumptions, including 7-day follow-ups and 60-day closure.</dd></div>
+                <div><dt class="font-semibold text-ink">Group project: Uber Eats process improvement</dt><dd class="text-muted">Developed a three-phase implementation and control plan for proposed dispatch and exception-handling improvements, defining KPIs, rollout criteria and risk mitigations. Also contributed cycle-time efficiency calculations and report preparation; process redesign was assigned to another team member.</dd></div>
               </dl>
               <p class="mt-3 text-sm text-muted">Academic case studies; proposed changes were not implemented in a live organisation.</p>
               <div class="mt-4 flex flex-wrap items-center justify-between gap-3">
@@ -885,7 +839,7 @@ levels, supporting pricing and discount-control recommendations.</dd></div>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Business Rules</li>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Implementation Planning</li>
                 </ul>
-                <a href="https://github.com/vanni442/Business-Process-Analysis-and-Improvement" target="_blank" rel="noopener noreferrer" aria-label="GitHub repository for Business Process Analysis and Improvement" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">GitHub <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/vanni442/Business-Process-Analysis-and-Improvement" target="_blank" aria-label="GitHub repository for Business Process Analysis and Improvement" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </li>
@@ -910,8 +864,8 @@ ontology and RDF data.</p>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">SPARQL</li>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Apache Jena Fuseki</li>
                 </ul>
-                <!-- TODO(link): GitHub repository URL for the Digital Care Information System -->
-                <a href="http://github.com/vanni442/DigitalCare_project" target="_blank" aria-label="GitHub repository for Digital Care Information System" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">GitHub <span aria-hidden="true">↗</span></a>
+                
+                <a href="https://github.com/vanni442/DigitalCare_project" target="_blank" aria-label="GitHub repository for Digital Care Information System" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </li>
@@ -933,7 +887,7 @@ ontology and RDF data.</p>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Data Modelling</li>
                 </ul>
                 <!-- GitHub repository URL for Pizza Sales Analysis -->
-                <a href="http://github.com/vanni442/Power-BI_Pizza_Sales_Analysis" target="_blank" aria-label="GitHub repository for Pizza Sales Analysis" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">GitHub <span aria-hidden="true">↗</span></a>
+                <a href="https://github.com/vanni442/Power-BI_Pizza_Sales_Analysis" target="_blank" aria-label="GitHub repository for Pizza Sales Analysis" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
               </div>
             </div>
           </li>
@@ -955,8 +909,8 @@ recommendations for SHB.</p>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">SPSS</li>
                   <li class="rounded-full border border-line px-2.5 py-1 font-mono text-xs text-muted">Excel</li>
                 </ul>
-                <!-- TODO(link): dissertation summary URL or PDF -->
-                <a href="http://github.com/vanni442/Dissertation_Thesis" target="_blank" aria-label="Read summary of the deposit decisions dissertation" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10">Summary</a>
+                
+                <a href="https://github.com/vanni442/Dissertation_Thesis" target="_blank" aria-label="Read summary of the deposit decisions dissertation" class="inline-flex h-11 shrink-0 items-center gap-1 rounded-full border border-line px-4 text-sm font-semibold text-primary transition-colors hover:border-primary hover:bg-primary/10" rel="noopener noreferrer">Summary</a>
               </div>
             </div>
           </li>
@@ -1035,8 +989,8 @@ recommendations for SHB.</p>
               </div>
               <ul class="mt-6 grid gap-3 md:grid-cols-2">
                 <li class="rounded-2xl border border-line bg-bg/60 p-4">
-                  <p class="font-semibold">Bachelor's in Finance and Banking</p>
-                  <p class="mt-1 text-sm text-muted">Academy of Finance · Excellent</p>
+                  <p class="font-semibold">Bachelor of Finance and Banking</p>
+                  <p class="mt-1 text-sm text-muted">Academy of Finance</p>
                 </li>
                 <li class="rounded-2xl border border-line bg-bg/60 p-4">
                   <p class="font-semibold">BA (Hons) Accounting and Finance</p>
@@ -1053,8 +1007,8 @@ recommendations for SHB.</p>
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
               </span>
               <h3 class="mt-5 font-display text-xl font-semibold">Postgraduate Academic Excellence Scholarship (30%)</h3>
-              <!-- TODO: add the year this scholarship was awarded -->
-              <p class="mt-1 font-mono text-xs text-muted">University of Wollongong · [2025 - 2026]</p>
+              
+              <p class="mt-1 font-mono text-xs text-muted">University of Wollongong · 2025–2026</p>
             </article>
           </div>
 
@@ -1083,27 +1037,27 @@ recommendations for SHB.</p>
           <!-- EDIT: milestones.certifications -->
           <div data-reveal="" class="md:col-span-6" style="--reveal-delay: 540ms;">
             <article class="rounded-3xl border border-line/70 bg-surface/70 p-6 shadow-card backdrop-blur-md md:p-8">
-              <h3 class="font-display text-2xl font-semibold">Certifications</h3>
+              <h3 class="font-display text-2xl font-semibold">Training &amp; Certifications</h3>
               <ul class="mt-4 divide-y divide-line">
                 <li class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
-                  <!-- TODO: add the year earned -->
-                  <p class="min-w-0"><span class="font-semibold">Design and manage analytics solutions using Power BI</span> <span class="font-mono text-xs text-muted">· Microsoft · [Jul 2026]</span></p>
-                  <!-- TODO(link): verification URL for the Power BI Data Analyst certificate -->
-                  <a href="https://learn.microsoft.com/en-us/training/courses/pl-300t00" target="_blank" aria-label="Verify Microsoft Power BI Data Analyst" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Course <span aria-hidden="true">↗</span></a>
-                  <a href="http://learn.microsoft.com/en-gb/users/vananhdinh-0048/achievements?tab=tab-modules#badges-section" target="_blank" aria-label="Verify Microsoft Power BI Data Analyst" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Badges <span aria-hidden="true">↗</span></a>
+                  
+                  <p class="min-w-0"><span class="font-semibold">Design and manage analytics solutions using Power BI</span> <span class="font-mono text-xs text-muted">· Microsoft Learn · Jul 2026</span></p>
+                  
+                  <a href="https://learn.microsoft.com/en-us/training/courses/pl-300t00" target="_blank" aria-label="View Microsoft Learn Power BI training" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10" rel="noopener noreferrer">Course <span aria-hidden="true">↗</span></a>
+                  <a href="https://learn.microsoft.com/en-gb/users/vananhdinh-0048/achievements?tab=tab-modules#badges-section" target="_blank" aria-label="View Microsoft Learn Power BI training" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10" rel="noopener noreferrer">Badges <span aria-hidden="true">↗</span></a>
 
                 </li>
                 <li class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
-                  <!-- TODO: add the year earned -->
-                  <p class="min-w-0"><span class="font-semibold">SQL for Newbies: Data Analysis for Beginners</span> <span class="font-mono text-xs text-muted">· MCI Academy · [Jan 2025]</span></p>
-                  <!-- TODO(link): verification URL for the SQL and Python certificate -->
-                  <a href="./assets/sql-python-certificate.pdf" target="_blank" rel="noopener" data-resume-open="" data-pdf-title="SQL and Python Foundations in Data Analytics" data-pdf-download="Vanni-Dinh-SQL-Python-Certificate.pdf" aria-label="View SQL and Python certificate" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Verify <span aria-hidden="true">↗</span></a>
+                  
+                  <p class="min-w-0"><span class="font-semibold">SQL for Newbies: Data Analysis for Beginners</span> <span class="font-mono text-xs text-muted">· MCI Academy · Jan 2025</span></p>
+                  
+                  <a href="./assets/sql-python-certificate.pdf" target="_blank" data-resume-open="" data-pdf-title="SQL and Python Foundations in Data Analytics" data-pdf-download="Vanni-Dinh-SQL-Python-Certificate.pdf" aria-label="View SQL and Python certificate" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10" rel="noopener noreferrer">Verify <span aria-hidden="true">↗</span></a>
                 </li>
                 <li class="flex flex-wrap items-center justify-between gap-x-6 gap-y-1 py-3">
-                  <!-- TODO: add the year earned -->
-                  <p class="min-w-0"><span class="font-semibold">Python Foundation in Data Analytics</span> <span class="font-mono text-xs text-muted">· MCI Academy · [Sep 2024]</span></p>
-                  <!-- TODO(link): verification URL for the SQL and Python certificate -->
-                  <a href="./assets/sql-python-certificate.pdf" target="_blank" rel="noopener" data-resume-open="" data-pdf-title="SQL and Python Foundations in Data Analytics" data-pdf-download="Vanni-Dinh-SQL-Python-Certificate.pdf" aria-label="View SQL and Python certificate" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10">Verify <span aria-hidden="true">↗</span></a>
+                  
+                  <p class="min-w-0"><span class="font-semibold">Python Foundation in Data Analytics</span> <span class="font-mono text-xs text-muted">· MCI Academy · Sep 2024</span></p>
+                  
+                  <a href="./assets/sql-python-certificate.pdf" target="_blank" data-resume-open="" data-pdf-title="SQL and Python Foundations in Data Analytics" data-pdf-download="Vanni-Dinh-SQL-Python-Certificate.pdf" aria-label="View SQL and Python certificate" class="inline-flex h-11 items-center gap-1 rounded-full px-3 text-sm font-semibold text-primary transition-colors hover:bg-primary/10" rel="noopener noreferrer">Verify <span aria-hidden="true">↗</span></a>
                 </li>
               </ul>
             </article>
@@ -1158,7 +1112,7 @@ analytical role that combines business, data and technology. If you have
         <!-- Social cards. EDIT: contact.socials -->
         <ul data-reveal-group="" class="mt-14 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
           <li data-reveal="" style="--reveal-delay: 0ms;">
-            <a href="https://www.linkedin.com/in/vannidinh" target="_blank" rel="noopener" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover">
+            <a href="https://www.linkedin.com/in/vannidinh" target="_blank" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover" rel="noopener noreferrer">
               <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-on-primary" aria-hidden="true">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path><rect width="4" height="12" x="2" y="9"></rect><circle cx="4" cy="4" r="2"></circle></svg>
               </span>
@@ -1169,7 +1123,7 @@ analytical role that combines business, data and technology. If you have
             </a>
           </li>
           <li data-reveal="" style="--reveal-delay: 90ms;">
-            <a href="https://github.com/vanni442" target="_blank" rel="noopener" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover">
+            <a href="https://github.com/vanni442" target="_blank" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover" rel="noopener noreferrer">
               <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-on-primary" aria-hidden="true">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"></path><path d="M9 18c-4.51 2-5-2-7-2"></path></svg>
               </span>
@@ -1180,7 +1134,7 @@ analytical role that combines business, data and technology. If you have
             </a>
           </li>
           <li data-reveal="" style="--reveal-delay: 180ms;">
-            <a href="./assets/resume.pdf" target="_blank" rel="noopener" data-resume-open="" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover">
+            <a href="./assets/resume.pdf" target="_blank" data-resume-open="" class="group flex h-full items-center gap-4 rounded-3xl border border-line/70 bg-surface/70 p-5 shadow-card backdrop-blur-md transition-[border-color,box-shadow] duration-300 ease-out-quint hover:border-primary/50 hover:shadow-card-hover" rel="noopener noreferrer">
               <span class="grid h-12 w-12 shrink-0 place-items-center rounded-2xl bg-primary/10 text-primary transition-colors duration-300 group-hover:bg-primary group-hover:text-on-primary" aria-hidden="true">
                 <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"></path><path d="M14 2v4a2 2 0 0 0 2 2h4"></path><path d="M16 13H8M16 17H8M10 9H8"></path></svg>
               </span>
@@ -1232,7 +1186,7 @@ analytical role that combines business, data and technology. If you have
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12M7 10l5 5 5-5M5 21h14"></path></svg>
           Download
         </a>
-        <a href="./assets/resume.pdf" target="_blank" rel="noopener" class="hidden h-10 items-center gap-1.5 rounded-full border border-line px-4 text-sm font-semibold transition-colors hover:border-primary hover:text-primary sm:inline-flex">
+        <a href="./assets/resume.pdf" target="_blank" class="hidden h-10 items-center gap-1.5 rounded-full border border-line px-4 text-sm font-semibold transition-colors hover:border-primary hover:text-primary sm:inline-flex" rel="noopener noreferrer">
           Open in new tab <span aria-hidden="true">↗</span><span class="sr-only"> (opens in a new tab)</span>
         </a>
         <button type="button" data-resume-close="" aria-label="Close résumé" class="grid h-10 w-10 place-items-center rounded-full text-muted transition-colors hover:bg-line/60 hover:text-ink">
@@ -1255,8 +1209,8 @@ analytical role that combines business, data and technology. If you have
       // ------------------------------------------------------------
       const CONTENT = {
         roles: [
-          'a Data Analyst',
-          'a Business Analyst',
+          'an Aspiring Data Analyst',
+          'an Aspiring Business Analyst',
           'a Power BI Dashboard Builder',
           'a Master of IT Student'
         ]
@@ -1267,14 +1221,6 @@ analytical role that combines business, data and technology. If you have
       const RM = matchMedia('(prefers-reduced-motion: reduce)');
       const $ = (sel, scope = document) => scope.querySelector(sel);
       const $$ = (sel, scope = document) => [...scope.querySelectorAll(sel)];
-      // Keep the statistic aligned with the projects displayed on the page.
-      const projectCounter = document.getElementById('project-count');
-      if (projectCounter) {
-        const totalProjects = document.querySelectorAll('#projects h3').length;
-        projectCounter.dataset.count = String(totalProjects);
-        projectCounter.textContent = String(totalProjects);
-      }
-
       const sleep = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
       const clamp = (n, min, max) => Math.min(Math.max(n, min), max);
 
@@ -1299,7 +1245,7 @@ analytical role that combines business, data and technology. If you have
           }
         };
 
-        apply(root.classList.contains('light'), false);
+        apply(root.classList.contains('dark'), false);
         buttons.forEach((btn) => btn.addEventListener('click', () => apply(!root.classList.contains('dark'), true)));
 
         system.addEventListener('change', (e) => {
@@ -1668,9 +1614,13 @@ analytical role that combines business, data and technology. If you have
         });
 
         closeButton.addEventListener('click', () => dialog.close());
+        dialog.addEventListener('close', () => { frame.removeAttribute('src'); });
 
         dialog.addEventListener('click', (e) => {
-          if (e.target === dialog) dialog.close();
+          if (e.target === dialog) {
+            const rect = dialog.getBoundingClientRect();
+            if (e.clientX < rect.left || e.clientX > rect.right || e.clientY < rect.top || e.clientY > rect.bottom) dialog.close();
+          }
         });
       }
 
@@ -1679,20 +1629,27 @@ analytical role that combines business, data and technology. If you have
         $$('[data-year]').forEach((el) => { el.textContent = String(new Date().getFullYear()); });
       }
 
+      // Fail open: keep the portfolio readable if an optional enhancement fails.
+      const enhance = (fn) => {
+        try { fn(); } catch (error) {
+          console.warn('Optional portfolio enhancement unavailable:', fn.name);
+          root.classList.remove('js');
+        }
+      };
       // ---------- Boot ----------
       syncReducedMotion();
       RM.addEventListener('change', syncReducedMotion);
 
-      initTheme();
-      initMobileNav();
-      initTypewriter();
-      initHeroIntro();
-      initReveal();
-      initScrollLoop();
-      initScrollSpy();
-      initCopyEmail();
-      initResumeViewer();
-      initYear();
+      enhance(initTheme);
+      enhance(initMobileNav);
+      enhance(initTypewriter);
+      enhance(initHeroIntro);
+      enhance(initReveal);
+      enhance(initScrollLoop);
+      enhance(initScrollSpy);
+      enhance(initCopyEmail);
+      enhance(initResumeViewer);
+      enhance(initYear);
     })();
   </script>
 
